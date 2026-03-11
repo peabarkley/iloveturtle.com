@@ -1,0 +1,24 @@
+# 操作系统生成文件
+.DS_Store
+Thumbs.db
+
+# 编辑器临时文件
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# 日志文件
+*.log
+
+# 本地配置文件
+.env
+.config
+
+# 缓存文件夹（如存在）
+/cache/
+/temp/
+
+# 图片备份（可选）
+/images/*.bak

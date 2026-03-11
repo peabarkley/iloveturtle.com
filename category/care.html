@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>饲养专题 - 爱龟谷</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 40px 0; }
+        .topic-card { background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,40,0,0.06); border: 1px solid #e2eed6; transition: transform 0.2s; text-decoration: none; color: inherit; }
+        .topic-card:hover { transform: translateY(-5px); }
+        .topic-img { width: 100%; height: 200px; object-fit: cover; }
+        .topic-content { padding: 24px; }
+        .topic-content h2 { font-size: 1.8rem; color: #1f4a1f; margin-bottom: 12px; }
+        .topic-content p { color: #3b5a3b; margin-bottom: 16px; }
+        .topic-meta { color: #5e7e5e; font-size: 0.95rem; }
+        .section-header { text-align: center; margin: 40px 0; }
+        .section-header h1 { font-size: 2.5rem; color: #1d4a1d; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-area">
+                <div class="logo-icon"><i class="fas fa-turtle"></i></div>
+                <div class="logo-text">
+                    <h1 data-i18n="site_name">爱龟谷</h1>
+                    <p data-i18n="site_subtitle">turtle · 知识库 | 综合科普</p>
+                </div>
+            </div>
+            <div class="nav-wrapper">
+                <nav class="nav-links">
+                    <a href="../index.html" data-i18n="nav_home">首页</a>
+                    <a href="facts.html" data-i18n="nav_facts">冷知识</a>
+                    <a href="species.html" data-i18n="nav_species">品种</a>
+                    <a href="care.html" data-i18n="nav_care">饲养</a>
+                    <a href="disease.html" data-i18n="nav_health">疾病</a>
+                </nav>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="zh">中文</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html" data-i18n="home">首页</a> &gt; <span data-i18n="nav_care">饲养</span>
+    </div>
+
+    <!-- 中文版头部 -->
+    <div class="lang-block-zh" style="display: block;">
+        <div class="section-header">
+            <h1>饲养 · 专题合集</h1>
+            <p>从基础到进阶，掌握科学养龟的每一个细节</p>
+        </div>
+    </div>
+
+    <!-- 英文版头部 -->
+    <div class="lang-block-en" style="display: none;">
+        <div class="section-header">
+            <h1>Care · Topics</h1>
+            <p>From basics to advanced, master every detail of scientific turtle keeping.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 中文卡片网格 -->
+        <div class="topic-grid lang-block-zh" style="display: block;">
+            <a href="care-essentials.html" class="topic-card">
+                <img class="topic-img" src="../images/care-essentials.jpg" alt="饲养要点">
+                <div class="topic-content">
+                    <h2>饲养要点</h2>
+                    <p>水质、温度、喂食、光照……养龟必须掌握的核心知识。</p>
+                    <div class="topic-meta">12篇文章 · 28w阅读</div>
+                </div>
+            </a>
+            <a href="care-aquascape.html" class="topic-card">
+                <img class="topic-img" src="../images/care-aquascape.jpg" alt="造景生态">
+                <div class="topic-content">
+                    <h2>造景生态</h2>
+                    <p>仿野造景、生态缸布置、植物搭配，打造龟的理想家园。</p>
+                    <div class="topic-meta">8篇文章 · 16w阅读</div>
+                </div>
+            </a>
+            <a href="care-seasonal.html" class="topic-card">
+                <img class="topic-img" src="../images/care-seasonal.jpg" alt="季节提醒">
+                <div class="topic-content">
+                    <h2>季节提醒</h2>
+                    <p>冬眠、夏养、春秋换季……不同季节的养护重点全解析。</p>
+                    <div class="topic-meta">10篇文章 · 22w阅读</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- 英文卡片网格 -->
+        <div class="topic-grid lang-block-en" style="display: none;">
+            <a href="care-essentials.html" class="topic-card">
+                <img class="topic-img" src="../images/care-essentials.jpg" alt="Care Essentials">
+                <div class="topic-content">
+                    <h2>Care Essentials</h2>
+                    <p>Water quality, temperature, feeding, lighting... Core knowledge for turtle keeping.</p>
+                    <div class="topic-meta">12 articles · 280k reads</div>
+                </div>
+            </a>
+            <a href="care-aquascape.html" class="topic-card">
+                <img class="topic-img" src="../images/care-aquascape.jpg" alt="Aquascaping">
+                <div class="topic-content">
+                    <h2>Aquascaping</h2>
+                    <p>Natural setups, eco-tanks, plant selection – create an ideal home for your turtle.</p>
+                    <div class="topic-meta">8 articles · 160k reads</div>
+                </div>
+            </a>
+            <a href="care-seasonal.html" class="topic-card">
+                <img class="topic-img" src="../images/care-seasonal.jpg" alt="Seasonal Care">
+                <div class="topic-content">
+                    <h2>Seasonal Care</h2>
+                    <p>Hibernation, summer care, spring/autumn transitions – key tips for each season.</p>
+                    <div class="topic-meta">10 articles · 220k reads</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h5>爱龟谷</h5><ul><li><a href="#">关于我们</a></li><li><a href="#">内容准则</a></li><li><a href="#">商务合作</a></li></ul></div>
+                <div class="footer-col"><h5>探索</h5><ul><li><a href="facts.html" data-i18n="footer_facts">冷知识库</a></li><li><a href="species.html" data-i18n="footer_species">品种大全</a></li><li><a href="disease.html" data-i18n="footer_health">疾病自诊</a></li></ul></div>
+                <div class="footer-col"><h5>互动</h5><ul><li><a href="#"><i class="fab fa-weixin"></i> <span data-i18n="footer_wechat">公众号</span></a></li><li><a href="#" data-i18n="footer_community">龟友圈</a></li></ul></div>
+            </div>
+            <div class="copyright" data-i18n="footer_copyright">© 2026 爱龟谷 · 乌龟综合科普库</div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

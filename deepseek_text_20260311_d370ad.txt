@@ -1,0 +1,30 @@
+aiguigu-website/
+├── index.html
+├── style.css
+├── script.js
+├── category/
+│   ├── facts.html
+│   ├── species.html
+│   ├── care.html
+│   ├── disease.html
+│   ├── facts-disruption.html
+│   ├── facts-physiology.html
+│   ├── facts-beginner.html
+│   ├── species-tortoise.html
+│   ├── species-water.html
+│   ├── species-semiaquatic.html
+│   ├── care-essentials.html
+│   ├── care-aquascape.html
+│   ├── care-seasonal.html
+│   ├── disease-treatment.html
+│   └── disease-expert.html
+└── article/
+    ├── turtle-secrets.html
+    ├── newbie-guide.html
+    ├── sulcata-vs-hermann.html
+    ├── best-water-turtle.html
+    ├── semiaquatic-list.html
+    ├── care-details.html
+    ├── hibernation.html
+    ├── disease-treatment-detail.html
+    └── expert-recommend.html

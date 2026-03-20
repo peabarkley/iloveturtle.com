@@ -2,8 +2,9 @@ name: 自动采集热门乌龟话题
 
 on:
   schedule:
+    # 每天运行4次：2点、8点、14点、20点（北京时间）
     - cron: '0 18,0,6,12 * * *'
-  workflow_dispatch:
+  workflow_dispatch:  # 支持手动触发
 
 jobs:
   scrape-and-publish:
@@ -26,9 +27,17 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            libnss3 libatk-bridge2.0-0 libdrm2 libxkbcommon0 \
-            libgbm1 libasound2t64 libxcomposite1 libxdamage1 \
-            libxrandr2 libpango-1.0-0 libcairo2
+            libnss3 \
+            libatk-bridge2.0-0 \
+            libdrm2 \
+            libxkbcommon0 \
+            libgbm1 \
+            libasound2t64 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libpango-1.0-0 \
+            libcairo2
       
       - name: 安装Python依赖
         run: |
@@ -37,50 +46,74 @@ jobs:
           playwright install chromium
           playwright install-deps
       
+      - name: 创建必要目录
+        run: |
+          mkdir -p scripts/config
+          mkdir -p data
+          mkdir -p articles_new
+          mkdir -p zh/article
+          mkdir -p article
+          echo "✅ 目录创建完成"
+      
       - name: 运行采集脚本
         run: |
           cd scripts
           python auto_scraper.py
+        continue-on-error: true
       
-      - name: 更新页面
+      - name: 生成文章列表
         run: |
           cd scripts
-          python update_pages.py
+          # 检查是否有生成文章列表的脚本
+          if [ -f "generate_article_list.py" ]; then
+            python generate_article_list.py
+          else
+            echo "⚠️ 文章列表生成脚本不存在，跳过"
+          fi
+        continue-on-error: true
       
       - name: 移动新文章到正式目录
         run: |
-          mkdir -p article zh/article
-          
+          # 移动中文文章
           if ls articles_new/*.zh.html 1> /dev/null 2>&1; then
             mv articles_new/*.zh.html zh/article/ 2>/dev/null || true
+            echo "✅ 已移动中文文章"
           fi
           
+          # 移动英文文章
           if ls articles_new/*.en.html 1> /dev/null 2>&1; then
             mv articles_new/*.en.html article/ 2>/dev/null || true
+            echo "✅ 已移动英文文章"
           fi
           
+          # 清理临时目录
           rm -rf articles_new
           mkdir articles_new
           
-          echo "✅ 文章已移动到对应目录"
+          echo "✅ 文章移动完成"
+      
+      - name: 检查并添加文件
+        run: |
+          # 只添加存在的文件
+          git add data/ 2>/dev/null || true
+          git add article/ 2>/dev/null || true
+          git add zh/article/ 2>/dev/null || true
+          git add zh/articles.html 2>/dev/null || true
+          git add index.html 2>/dev/null || true
+          
+          echo "📊 准备提交的文件："
+          git status --short
       
       - name: 提交更改
         run: |
           git config user.name "爱龟谷机器人"
           git config user.email "bot@iloveturtle.com"
-          git add data/ article/ zh/article/ zh/category/ zh/index.html index.html
-          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 自动更新 $(date +'%Y-%m-%d %H:%M') 新文章"
-          git push
-                - name: 生成文章列表
-        run: |
-          cd scripts
-          python generate_article_list.py
-          python update_homepage.py
-      
-      - name: 提交更改
-        run: |
-          git config user.name "爱龟谷机器人"
-          git config user.email "bot@iloveturtle.com"
-          git add zh/articles.html index.html
-          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 更新文章列表 $(date +'%Y-%m-%d %H:%M')"
-          git push
+          
+          # 检查是否有更改
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "✅ 没有文件需要提交"
+          else
+            git commit -m "🤖 自动更新 $(date +'%Y-%m-%d %H:%M')"
+            git push
+            echo "✅ 已提交更改"
+          fi

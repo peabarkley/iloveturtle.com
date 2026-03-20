@@ -2,8 +2,8 @@ name: 自动采集热门乌龟话题
 
 on:
   schedule:
-    - cron: '0 18,0,6,12 * * *'  # 北京时间 2:00, 8:00, 14:00, 20:00
-  workflow_dispatch:  # 支持手动触发
+    - cron: '0 18,0,6,12 * * *'
+  workflow_dispatch:
 
 jobs:
   scrape-and-publish:
@@ -26,17 +26,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            libnss3 \
-            libatk-bridge2.0-0 \
-            libdrm2 \
-            libxkbcommon0 \
-            libgbm1 \
-            libasound2t64 \
-            libxcomposite1 \
-            libxdamage1 \
-            libxrandr2 \
-            libpango-1.0-0 \
-            libcairo2
+            libnss3 libatk-bridge2.0-0 libdrm2 libxkbcommon0 \
+            libgbm1 libasound2t64 libxcomposite1 libxdamage1 \
+            libxrandr2 libpango-1.0-0 libcairo2
       
       - name: 安装Python依赖
         run: |
@@ -45,19 +37,15 @@ jobs:
           playwright install chromium
           playwright install-deps
       
-      - name: 调试信息
-        run: |
-          echo "当前目录: $(pwd)"
-          echo "文件列表:"
-          ls -la
-          echo "scripts目录:"
-          ls -la scripts/ || echo "scripts目录不存在"
-      
       - name: 运行采集脚本
-        # 注意：这里去掉了 OPENAI_API_KEY 环境变量
         run: |
           cd scripts
           python auto_scraper.py
+      
+      - name: 更新页面
+        run: |
+          cd scripts
+          python update_pages.py
       
       - name: 移动新文章到正式目录
         run: |
@@ -80,6 +68,6 @@ jobs:
         run: |
           git config user.name "爱龟谷机器人"
           git config user.email "bot@iloveturtle.com"
-          git add data/ article/ zh/article/
-          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 自动添加 $(date +'%Y-%m-%d %H:%M') 采集的新文章"
+          git add data/ article/ zh/article/ zh/category/ zh/index.html index.html
+          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 自动更新 $(date +'%Y-%m-%d %H:%M') 新文章"
           git push

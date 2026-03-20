@@ -1,4 +1,77 @@
-      - name: 生成文章列表
+name: 自动采集热门乌龟话题
+
+on:
+  schedule:
+    - cron: '0 18,0,6,12 * * *'
+  workflow_dispatch:
+
+jobs:
+  scrape-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: 设置Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      
+      - name: 安装系统依赖
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 libatk-bridge2.0-0 libdrm2 libxkbcommon0 \
+            libgbm1 libasound2t64 libxcomposite1 libxdamage1 \
+            libxrandr2 libpango-1.0-0 libcairo2
+      
+      - name: 安装Python依赖
+        run: |
+          pip install --upgrade pip
+          pip install crawl4ai playwright beautifulsoup4 markdown requests lxml cssselect aiohttp
+          playwright install chromium
+          playwright install-deps
+      
+      - name: 运行采集脚本
+        run: |
+          cd scripts
+          python auto_scraper.py
+      
+      - name: 更新页面
+        run: |
+          cd scripts
+          python update_pages.py
+      
+      - name: 移动新文章到正式目录
+        run: |
+          mkdir -p article zh/article
+          
+          if ls articles_new/*.zh.html 1> /dev/null 2>&1; then
+            mv articles_new/*.zh.html zh/article/ 2>/dev/null || true
+          fi
+          
+          if ls articles_new/*.en.html 1> /dev/null 2>&1; then
+            mv articles_new/*.en.html article/ 2>/dev/null || true
+          fi
+          
+          rm -rf articles_new
+          mkdir articles_new
+          
+          echo "✅ 文章已移动到对应目录"
+      
+      - name: 提交更改
+        run: |
+          git config user.name "爱龟谷机器人"
+          git config user.email "bot@iloveturtle.com"
+          git add data/ article/ zh/article/ zh/category/ zh/index.html index.html
+          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 自动更新 $(date +'%Y-%m-%d %H:%M') 新文章"
+          git push
+                - name: 生成文章列表
         run: |
           cd scripts
           python generate_article_list.py

@@ -57,7 +57,19 @@ class AutoScraper:
             '知乎', '回答', '提问', '写文章', '发现', '等你来答',
             '打开App', '流畅', '高清', '超清', '会员', '大会员',
             '视频详情', '相关推荐', '评论', '点赞', '分享', '收藏',
-            '违法和不良信息举报电话', '网上有害信息举报', '涉未成年人举报'
+            '违法和不良信息举报电话', '网上有害信息举报', '涉未成年人举报',
+            '热门', '推荐', '最新', '视频', '图文', '专栏', '动态',
+            '关注的人', '粉丝数', '获赞数', '播放数', '弹幕数',
+            'www', 'http', 'https', '.com', '.cn', '.net'
+        ]
+        
+        # 标题黑名单（不能作为标题的词）
+        self.bad_titles = [
+            '首页', '搜索', '知乎', 'B站', '哔哩哔哩', '贴吧', '百度',
+            'Google', 'bing', '搜索', '结果', '列表', '下一页',
+            '登录', '注册', '忘记密码', '立即下载', '打开APP',
+            '热门视频', '推荐视频', '最新视频', '相关视频',
+            '评论', '点赞', '收藏', '转发', '分享'
         ]
         
         # 乌龟相关关键词
@@ -68,14 +80,31 @@ class AutoScraper:
             '锯缘', '安布', '木纹龟', '冬眠', '龟缸', '造景', '过滤',
             'UVB', '晒背', '腐皮', '肺炎', '白眼病', '软壳', '浮水',
             '加热', '温度', '水质', '喂食', '龟粮', '活食', '蚯蚓',
-            'turtle', 'tortoise', 'slider', 'musk', 'sulcata', 'hermann'
+            'turtle', 'tortoise', 'slider', 'musk', 'sulcata', 'hermann',
+            '孵化', '繁殖', '蛋', '幼苗', '幼龟', '成龟', '公母',
+            '品种', '品相', '发色', '生长纹', '隆背', '真菌'
         ]
+    
+    def is_valid_title(self, title):
+        """检查标题是否有效"""
+        if not title or len(title) < 4 or len(title) > 50:
+            return False
+        # 检查黑名单
+        if any(bad in title for bad in self.bad_titles):
+            return False
+        # 检查是否全是符号或数字
+        if re.match(r'^[\W\d_]+$', title):
+            return False
+        # 应该包含至少一个中文字符
+        if not re.search(r'[\u4e00-\u9fff]', title):
+            return False
+        return True
     
     def clean_content(self, text):
         """清理内容，去除导航菜单等无关内容"""
         lines = text.split('\n')
         cleaned_lines = []
-        meaningful_lines = []
+        turtle_lines = []
         
         for line in lines:
             line = line.strip()
@@ -85,7 +114,11 @@ class AutoScraper:
                 continue
                 
             # 跳过太短的行
-            if len(line) < 6:
+            if len(line) < 8:
+                continue
+                
+            # 跳过太长的行（可能是代码）
+            if len(line) > 200:
                 continue
                 
             # 跳过包含导航关键词的行
@@ -93,7 +126,7 @@ class AutoScraper:
                 continue
                 
             # 跳过URL行
-            if line.startswith('http') or '.com' in line or '.cn' in line:
+            if re.match(r'^https?://', line) or '.com' in line or '.cn' in line:
                 continue
                 
             # 跳过包含太多符号的行
@@ -106,75 +139,82 @@ class AutoScraper:
                 
             # 检查是否包含中文字符
             if re.search(r'[\u4e00-\u9fff]', line):
-                # 检查是否与乌龟相关
+                # 记录乌龟相关内容
                 if any(kw in line for kw in self.turtle_keywords):
-                    cleaned_lines.append(line)
-                    meaningful_lines.append(line)
-                else:
-                    # 如果没有乌龟关键词但长度合适，也保留
-                    if 10 < len(line) < 100:
-                        cleaned_lines.append(line)
+                    turtle_lines.append(line)
+                cleaned_lines.append(line)
         
-        # 如果没有找到任何乌龟相关内容，返回空
-        if len(meaningful_lines) < 2:
+        # 优先返回乌龟相关内容
+        if len(turtle_lines) >= 2:
+            return '\n\n'.join(turtle_lines[:20])
+        elif len(cleaned_lines) >= 3:
+            return '\n\n'.join(cleaned_lines[:20])
+        else:
             return ""
-            
-        return '\n\n'.join(cleaned_lines[:30])
     
     def extract_title(self, url, content):
-        """从内容中提取标题 - 改进版"""
+        """从内容中提取标题 - 最终优化版"""
         lines = content.split('\n')
         
-        # 优先找包含乌龟关键词的行
-        for line in lines[:20]:
+        # 第一步：找包含乌龟关键词的行
+        for line in lines[:30]:
             line = line.strip()
-            # 跳过太短或太长的行
-            if len(line) < 8 or len(line) > 100:
+            # 长度过滤
+            if len(line) < 6 or len(line) > 50:
                 continue
-            # 跳过导航关键词
-            if any(kw in line for kw in self.nav_keywords):
+            # 黑名单过滤
+            if any(bad in line for bad in self.bad_titles):
                 continue
-            # 如果包含乌龟关键词，优先作为标题
+            # 如果包含乌龟关键词
             if any(kw in line for kw in self.turtle_keywords):
                 # 清理多余符号
-                title = re.sub(r'^[#\s*【】\[\]「」]+', '', line)
-                title = re.sub(r'[#\s*【】\[\]「」]+$', '', title)
-                return title[:50]
+                clean = re.sub(r'^[#\s*【】\[\]「」_\-、，。！？…\s]+', '', line)
+                clean = re.sub(r'[#\s*【】\[\]「」_\-、，。！？…\s]+$', '', clean)
+                if self.is_valid_title(clean):
+                    return clean
         
-        # 如果没有找到，找第一个有意义的行
-        for line in lines[:15]:
+        # 第二步：找第一个有意义的中文行
+        for line in lines[:20]:
             line = line.strip()
-            if len(line) < 8 or len(line) > 100:
+            if len(line) < 8 or len(line) > 50:
                 continue
-            if any(kw in line for kw in self.nav_keywords):
+            if any(bad in line for bad in self.bad_titles):
                 continue
             if re.search(r'[\u4e00-\u9fff]', line):
-                title = re.sub(r'^[#\s*]+', '', line)
-                return title[:50]
+                clean = re.sub(r'^[#\s*【】\[\]「」_\-]+', '', line)
+                if self.is_valid_title(clean):
+                    return clean
         
-        # 从URL中提取
-        if 'video/BV' in url:
-            return "B站乌龟视频"
-        elif 'zhuanlan' in url:
-            return "知乎乌龟文章"
-        elif 'tieba' in url:
-            return "贴吧乌龟帖子"
-        elif 'bilibili' in url:
-            return "B站乌龟内容"
-        elif 'zhihu' in url:
-            return "知乎乌龟内容"
+        # 第三步：从URL中提取有意义的部分
+        if 'zhuanlan.zhihu.com' in url:
+            return "知乎乌龟科普"
+        elif 'bilibili.com' in url:
+            if 'video' in url:
+                return "B站乌龟视频"
+            else:
+                return "B站乌龟专栏"
+        elif 'tieba.baidu.com' in url:
+            return "贴吧乌龟讨论"
+        elif 'cnki' in url or 'baidu' in url:
+            return "乌龟资料"
         else:
-            return "乌龟科普文章"
+            # 从当前时间生成一个简单的标题
+            now = datetime.now()
+            return f"乌龟科普{now.month}月{now.day}日"
     
     def is_turtle_related(self, text):
         """检查内容是否与乌龟相关"""
         if not text:
             return False
         text_lower = text.lower()
+        # 至少需要匹配到2个乌龟关键词
+        match_count = 0
         for kw in self.turtle_keywords:
             if kw.lower() in text_lower:
-                return True
-        return False
+                match_count += 1
+                if match_count >= 2:
+                    return True
+        return match_count >= 1
     
     async def scrape_url(self, crawler, url, source_name):
         """爬取单个URL"""
@@ -198,14 +238,15 @@ class AutoScraper:
                 # 清理内容
                 cleaned_content = self.clean_content(result.markdown)
                 
-                if len(cleaned_content) < 100:
-                    print(f"    内容过短，跳过")
+                if len(cleaned_content) < 150:
+                    print(f"    内容过短({len(cleaned_content)}字符)，跳过")
                     return None
                 
                 # 提取标题
                 title = self.extract_title(url, cleaned_content)
                 
                 print(f"    找到标题: {title}")
+                print(f"    内容长度: {len(cleaned_content)} 字符")
                 
                 return {
                     "title": title,
@@ -226,15 +267,16 @@ class AutoScraper:
     def generate_filename(self, title):
         """生成文件名 - 使用标题"""
         date = datetime.now().strftime("%Y%m%d")
-        # 移除特殊字符，只保留字母数字和空格
+        
+        # 移除特殊字符，只保留字母数字中文和空格
         clean_title = re.sub(r'[^\w\s\u4e00-\u9fff-]', '', title)
         # 转小写，空格变中划线
         slug = clean_title.lower().strip().replace(' ', '-')
         # 限制长度
-        slug = slug[:50]
+        slug = slug[:40]
         
         # 如果slug为空，用时间戳
-        if not slug or len(slug) < 3:
+        if not slug or len(slug) < 4:
             import time
             slug = f"article-{int(time.time())}"
         
@@ -247,10 +289,12 @@ class AutoScraper:
         print(f"{'='*50}")
         
         article_count = 0
+        success_count = 0
+        fail_count = 0
         
         browser_config = BrowserConfig(
             headless=True,
-            verbose=True,
+            verbose=False,
         )
         
         try:
@@ -261,14 +305,17 @@ class AutoScraper:
                         
                     print(f"\n📡 正在采集 {source_name}...")
                     
-                    for url in source_config.get("urls", []):
+                    urls = source_config.get("urls", [])
+                    for url in urls:
                         if article_count >= self.max_articles_per_run:
                             break
                             
-                        print(f"  🔗 访问: {url}")
+                        print(f"\n  🔗 访问: {url}")
                         
-                        # 随机延迟
-                        await asyncio.sleep(random.uniform(3, 5))
+                        # 随机延迟，避免被封
+                        delay = random.uniform(3, 6)
+                        print(f"     等待 {delay:.1f} 秒...")
+                        await asyncio.sleep(delay)
                         
                         data = await self.scrape_url(crawler, url, source_name)
                         
@@ -276,6 +323,7 @@ class AutoScraper:
                             # 检查重复
                             if self.deduplicator.is_duplicate(data["title"], data["content"]):
                                 print(f"  ⏭️ 文章已存在，跳过")
+                                fail_count += 1
                                 continue
                             
                             # 自动分类
@@ -298,19 +346,22 @@ class AutoScraper:
                             self.deduplicator.add_article(data)
                             
                             article_count += 1
+                            success_count += 1
                             print(f"  ✅ 已保存 ({article_count}/{self.max_articles_per_run})")
                         else:
-                            print(f"  ⚠️ 内容过短或无效，跳过")
+                            print(f"  ⚠️ 内容无效，跳过")
+                            fail_count += 1
         
         except Exception as e:
             print(f"❌ 采集过程出错: {str(e)}")
             import traceback
             traceback.print_exc()
-            return
         
         print(f"\n{'='*50}")
-        print(f"采集完成！共新增 {article_count} 篇文章")
-        print(f"文件保存在: {self.output_dir.absolute()}")
+        print(f"采集完成！")
+        print(f"✅ 成功: {success_count} 篇")
+        print(f"❌ 失败: {fail_count} 篇")
+        print(f"📁 文件保存在: {self.output_dir.absolute()}")
         print(f"{'='*50}")
 
 async def main():

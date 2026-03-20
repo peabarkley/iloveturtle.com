@@ -1,98 +1,13 @@
-name: 自动采集热门乌龟话题
-
-on:
-  schedule:
-    - cron: '0 18,0,6,12 * * *'
-  workflow_dispatch:
-
-jobs:
-  scrape-and-publish:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      
-    steps:
-      - name: 检出代码
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      
-      - name: 设置Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-      
-      - name: 安装系统依赖
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libnss3 libatk-bridge2.0-0 libdrm2 libxkbcommon0 \
-            libgbm1 libasound2t64 libxcomposite1 libxdamage1 \
-            libxrandr2 libpango-1.0-0 libcairo2
-      
-      - name: 安装Python依赖
-        run: |
-          pip install --upgrade pip
-          pip install crawl4ai playwright beautifulsoup4 markdown requests lxml cssselect aiohttp
-          playwright install chromium
-          playwright install-deps
-      
-      - name: 运行采集脚本
+      - name: 生成文章列表
         run: |
           cd scripts
-          python auto_scraper.py
-      
-      - name: 更新页面
-        run: |
-          cd scripts
-          python update_pages.py || echo "页面更新脚本运行完成（可能有警告）"
-      
-      - name: 移动新文章到正式目录
-        run: |
-          mkdir -p article zh/article
-          
-          if ls articles_new/*.zh.html 1> /dev/null 2>&1; then
-            mv articles_new/*.zh.html zh/article/ 2>/dev/null || true
-          fi
-          
-          if ls articles_new/*.en.html 1> /dev/null 2>&1; then
-            mv articles_new/*.en.html article/ 2>/dev/null || true
-          fi
-          
-          rm -rf articles_new
-          mkdir articles_new
-          
-          echo "✅ 文章已移动到对应目录"
-      
-      - name: 创建必要的目录结构
-        run: |
-          mkdir -p zh/category
-          mkdir -p category
-          echo "✅ 目录创建完成"
-      
-      - name: 检查并添加文件
-        run: |
-          # 只添加存在的文件
-          git add data/ 2>/dev/null || true
-          git add article/ 2>/dev/null || true
-          git add zh/article/ 2>/dev/null || true
-          git add zh/category/ 2>/dev/null || true
-          git add zh/index.html 2>/dev/null || true
-          git add index.html 2>/dev/null || true
-          
-          echo "📊 准备提交的文件："
-          git status --short
+          python generate_article_list.py
+          python update_homepage.py
       
       - name: 提交更改
         run: |
           git config user.name "爱龟谷机器人"
           git config user.email "bot@iloveturtle.com"
-          
-          # 检查是否有更改
-          if git diff --quiet && git diff --staged --quiet; then
-            echo "✅ 没有文件需要提交"
-          else
-            git commit -m "🤖 自动更新 $(date +'%Y-%m-%d %H:%M') 新文章"
-            git push
-            echo "✅ 已提交更改"
-          fi
+          git add zh/articles.html index.html
+          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 更新文章列表 $(date +'%Y-%m-%d %H:%M')"
+          git push

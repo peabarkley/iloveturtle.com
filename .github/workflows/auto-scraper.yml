@@ -2,8 +2,7 @@ name: 自动采集热门乌龟话题
 
 on:
   schedule:
-    # 每天运行4次：2点、8点、14点、20点（北京时间）
-    - cron: '0 18,0,6,12 * * *'  # UTC时间，对应北京时间+8小时
+    - cron: '0 18,0,6,12 * * *'  # 北京时间 2:00, 8:00, 14:00, 20:00
   workflow_dispatch:  # 支持手动触发
 
 jobs:
@@ -22,14 +21,25 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-          cache: 'pip'
       
-      - name: 安装依赖
+      - name: 安装系统依赖
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnss3 libatk-bridge2.0-0 libdrm2 libxkbcommon0 libgbm1 libasound2
+      
+      - name: 安装Python依赖
         run: |
           pip install --upgrade pip
-          pip install -r scripts/requirements.txt
-          # 安装playwright浏览器（用于动态页面抓取）
+          pip install crawl4ai playwright beautifulsoup4 markdown requests lxml cssselect aiohttp
           playwright install chromium --with-deps
+      
+      - name: 调试信息
+        run: |
+          echo "当前目录: $(pwd)"
+          echo "文件列表:"
+          ls -la
+          echo "scripts目录:"
+          ls -la scripts/ || echo "scripts目录不存在"
       
       - name: 运行采集脚本
         env:
@@ -37,10 +47,6 @@ jobs:
         run: |
           cd scripts
           python auto_scraper.py
-      
-      - name: 检查新文章
-        run: |
-          echo "新文章数量: $(ls articles_new/ 2>/dev/null | wc -l)"
       
       - name: 移动新文章到正式目录
         run: |
@@ -57,7 +63,7 @@ jobs:
             mv articles_new/*.en.html article/ 2>/dev/null || true
           fi
           
-          # 清理空目录
+          # 清理临时目录
           rm -rf articles_new
           mkdir articles_new
           
@@ -68,6 +74,5 @@ jobs:
           git config user.name "爱龟谷机器人"
           git config user.email "bot@iloveturtle.com"
           git add data/ article/ zh/article/
-          # 如果有更改才提交
           git diff --quiet && git diff --staged --quiet || git commit -m "🤖 自动添加 $(date +'%Y-%m-%d %H:%M') 采集的新文章"
           git push

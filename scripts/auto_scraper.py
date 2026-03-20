@@ -46,33 +46,75 @@ class AutoScraper:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.max_articles_per_run = 8  # 每次最多采集8篇
         
+        # 乌龟相关关键词（用于过滤内容）
+        self.turtle_keywords = [
+            '乌龟', '养龟', '龟', '巴西龟', '陆龟', '水龟', 
+            '蛋龟', '麝香', '草龟', '剃刀', '窄桥', '黄缘',
+            '冬眠', '龟缸', '腐皮', '肺炎', '白眼病', '软壳',
+            '晒背', 'UVB', '加热', '过滤', '造景', '生态缸',
+            'turtle', 'tortoise', 'slider', 'musk'
+        ]
+        
+        # 黑名单词（过滤导航菜单）
+        self.blacklist = [
+            '首页', '番剧', '直播', '游戏中心', '会员购', 
+            '漫画', '赛事', '下载客户端', '搜索', '筛选', 
+            '分区', '粉丝', '关注', '登录', '注册', '投稿',
+            '消息', '动态', '收藏', '历史', '创作中心',
+            '反馈', '客服', '帮助', '协议', '隐私政策'
+        ]
+    
+    def is_turtle_related(self, text):
+        """检查内容是否与乌龟相关"""
+        text_lower = text.lower()
+        for kw in self.turtle_keywords:
+            if kw.lower() in text_lower:
+                return True
+        return False
+    
     def extract_title_from_html(self, markdown_content, url):
-        """从Markdown内容中提取标题（不依赖OpenAI）"""
+        """从Markdown内容中提取标题（改进版）"""
         lines = markdown_content.split('\n')
         
         # 方法1：找第一个h1标题（以#开头的行）
-        for line in lines[:15]:  # 只检查前15行
+        for line in lines[:30]:
             if line.startswith('# '):
-                # 移除#和空格，取前60个字符
                 title = line[2:].strip()
-                if title and len(title) > 5:
-                    return title[:60]
+                # 检查是否包含黑名单词
+                if any(bad in title for bad in self.blacklist):
+                    continue
+                # 检查是否与乌龟相关
+                if self.is_turtle_related(title):
+                    if title and len(title) > 5 and len(title) < 100:
+                        return title[:60]
         
-        # 方法2：找第一个非空行（可能没有#标记）
-        for line in lines[:10]:
-            if line.strip() and not line.startswith('![') and len(line) > 10:
-                title = line.strip()[:60]
-                return title
+        # 方法2：找第一个非空行，且不是导航菜单
+        for line in lines[:20]:
+            clean_line = line.strip()
+            if clean_line and not clean_line.startswith('![') and len(clean_line) > 10:
+                # 检查是否包含黑名单词
+                if any(bad in clean_line for bad in self.blacklist):
+                    continue
+                # 检查是否像菜单（包含太多|符号）
+                if clean_line.count('|') > 3:
+                    continue
+                # 检查是否与乌龟相关
+                if self.is_turtle_related(clean_line):
+                    return clean_line[:60]
         
-        # 方法3：从URL中提取
-        # 去掉https://，取最后一部分
-        url_part = url.split('/')[-1].replace('-', ' ').replace('_', ' ')
-        # 移除多余的数字和乱码
-        url_part = re.sub(r'[0-9]+', '', url_part).strip()
-        if url_part and len(url_part) > 5:
-            return url_part[:40]
+        # 方法3：从URL中提取关键词
+        if 'keyword=' in url:
+            keyword = url.split('keyword=')[-1].split('&')[0]
+            if keyword:
+                return f"{keyword}相关资讯"
         
-        # 最后备用
+        # 方法4：尝试从内容中找第一个乌龟相关句子
+        for line in lines[:50]:
+            if self.is_turtle_related(line):
+                clean_line = line.strip()[:60]
+                if len(clean_line) > 10:
+                    return clean_line
+        
         return "乌龟科普文章"
     
     async def scrape_url(self, crawler, url, source_name):
@@ -89,11 +131,19 @@ class AutoScraper:
             result = await crawler.arun(url, config=config)
             
             if result.success and result.markdown:
+                # 检查内容是否包含乌龟相关关键词
+                if not self.is_turtle_related(result.markdown):
+                    print(f"    内容无关乌龟，跳过")
+                    return None
+                
                 # 提取标题
                 title = self.extract_title_from_html(result.markdown, url)
                 
                 # 提取内容（取前4000字）
                 content = result.markdown[:4000]
+                
+                # 清理内容中的多余空白
+                content = re.sub(r'\n{3,}', '\n\n', content)
                 
                 return {
                     "title": title,

@@ -1,0 +1,73 @@
+name: 自动采集热门乌龟话题
+
+on:
+  schedule:
+    # 每天运行4次：2点、8点、14点、20点（北京时间）
+    - cron: '0 18,0,6,12 * * *'  # UTC时间，对应北京时间+8小时
+  workflow_dispatch:  # 支持手动触发
+
+jobs:
+  scrape-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: 设置Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+      
+      - name: 安装依赖
+        run: |
+          pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+          # 安装playwright浏览器（用于动态页面抓取）
+          playwright install chromium --with-deps
+      
+      - name: 运行采集脚本
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd scripts
+          python auto_scraper.py
+      
+      - name: 检查新文章
+        run: |
+          echo "新文章数量: $(ls articles_new/ 2>/dev/null | wc -l)"
+      
+      - name: 移动新文章到正式目录
+        run: |
+          # 创建目录（如果不存在）
+          mkdir -p article zh/article
+          
+          # 移动中文文章
+          if ls articles_new/*.zh.html 1> /dev/null 2>&1; then
+            mv articles_new/*.zh.html zh/article/ 2>/dev/null || true
+          fi
+          
+          # 移动英文文章
+          if ls articles_new/*.en.html 1> /dev/null 2>&1; then
+            mv articles_new/*.en.html article/ 2>/dev/null || true
+          fi
+          
+          # 清理空目录
+          rm -rf articles_new
+          mkdir articles_new
+          
+          echo "✅ 文章已移动到对应目录"
+      
+      - name: 提交更改
+        run: |
+          git config user.name "爱龟谷机器人"
+          git config user.email "bot@iloveturtle.com"
+          git add data/ article/ zh/article/
+          # 如果有更改才提交
+          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 自动添加 $(date +'%Y-%m-%d %H:%M') 采集的新文章"
+          git push

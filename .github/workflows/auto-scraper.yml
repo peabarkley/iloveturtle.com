@@ -22,16 +22,32 @@ jobs:
         with:
           python-version: '3.10'
       
-      - name: 安装系统依赖
+      - name: 安装系统依赖（修复版）
         run: |
           sudo apt-get update
-          sudo apt-get install -y libnss3 libatk-bridge2.0-0 libdrm2 libxkbcommon0 libgbm1 libasound2
+          sudo apt-get install -y \
+            libnss3 \
+            libatk-bridge2.0-0 \
+            libdrm2 \
+            libxkbcommon0 \
+            libgbm1 \
+            libasound2t64 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libgbm1 \
+            libpango-1.0-0 \
+            libcairo2
       
       - name: 安装Python依赖
         run: |
           pip install --upgrade pip
           pip install crawl4ai playwright beautifulsoup4 markdown requests lxml cssselect aiohttp
-          playwright install chromium --with-deps
+      
+      - name: 安装Playwright浏览器
+        run: |
+          playwright install chromium
+          playwright install-deps
       
       - name: 调试信息
         run: |

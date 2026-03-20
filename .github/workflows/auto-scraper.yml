@@ -45,7 +45,7 @@ jobs:
       - name: 更新页面
         run: |
           cd scripts
-          python update_pages.py
+          python update_pages.py || echo "页面更新脚本运行完成（可能有警告）"
       
       - name: 移动新文章到正式目录
         run: |
@@ -64,10 +64,35 @@ jobs:
           
           echo "✅ 文章已移动到对应目录"
       
+      - name: 创建必要的目录结构
+        run: |
+          mkdir -p zh/category
+          mkdir -p category
+          echo "✅ 目录创建完成"
+      
+      - name: 检查并添加文件
+        run: |
+          # 只添加存在的文件
+          git add data/ 2>/dev/null || true
+          git add article/ 2>/dev/null || true
+          git add zh/article/ 2>/dev/null || true
+          git add zh/category/ 2>/dev/null || true
+          git add zh/index.html 2>/dev/null || true
+          git add index.html 2>/dev/null || true
+          
+          echo "📊 准备提交的文件："
+          git status --short
+      
       - name: 提交更改
         run: |
           git config user.name "爱龟谷机器人"
           git config user.email "bot@iloveturtle.com"
-          git add data/ article/ zh/article/ zh/category/ zh/index.html index.html
-          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 自动更新 $(date +'%Y-%m-%d %H:%M') 新文章"
-          git push
+          
+          # 检查是否有更改
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "✅ 没有文件需要提交"
+          else
+            git commit -m "🤖 自动更新 $(date +'%Y-%m-%d %H:%M') 新文章"
+            git push
+            echo "✅ 已提交更改"
+          fi

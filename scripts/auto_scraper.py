@@ -6,6 +6,7 @@ import json
 import os
 import sys
 import random
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -43,10 +44,39 @@ class AutoScraper:
         self.classifier = ArticleClassifier()
         self.output_dir = Path("../articles_new")
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        self.max_articles_per_run = 5  # 首次测试，先设小一点
+        self.max_articles_per_run = 8  # 每次最多采集8篇
         
+    def extract_title_from_html(self, markdown_content, url):
+        """从Markdown内容中提取标题（不依赖OpenAI）"""
+        lines = markdown_content.split('\n')
+        
+        # 方法1：找第一个h1标题（以#开头的行）
+        for line in lines[:15]:  # 只检查前15行
+            if line.startswith('# '):
+                # 移除#和空格，取前60个字符
+                title = line[2:].strip()
+                if title and len(title) > 5:
+                    return title[:60]
+        
+        # 方法2：找第一个非空行（可能没有#标记）
+        for line in lines[:10]:
+            if line.strip() and not line.startswith('![') and len(line) > 10:
+                title = line.strip()[:60]
+                return title
+        
+        # 方法3：从URL中提取
+        # 去掉https://，取最后一部分
+        url_part = url.split('/')[-1].replace('-', ' ').replace('_', ' ')
+        # 移除多余的数字和乱码
+        url_part = re.sub(r'[0-9]+', '', url_part).strip()
+        if url_part and len(url_part) > 5:
+            return url_part[:40]
+        
+        # 最后备用
+        return "乌龟科普文章"
+    
     async def scrape_url(self, crawler, url, source_name):
-        """爬取单个URL - 简化版"""
+        """爬取单个URL - 简化版（不依赖OpenAI）"""
         try:
             print(f"    正在爬取: {url}")
             
@@ -59,15 +89,11 @@ class AutoScraper:
             result = await crawler.arun(url, config=config)
             
             if result.success and result.markdown:
-                # 简单提取标题和内容
-                lines = result.markdown.split('\n')
-                title = lines[0] if lines else "无标题"
-                # 去除可能的markdown标记
-                title = title.replace('#', '').strip()
-                content = '\n'.join(lines[1:])[:3000]
+                # 提取标题
+                title = self.extract_title_from_html(result.markdown, url)
                 
-                if not content:
-                    content = result.markdown[:3000]
+                # 提取内容（取前4000字）
+                content = result.markdown[:4000]
                 
                 return {
                     "title": title,
@@ -86,11 +112,21 @@ class AutoScraper:
             return None
     
     def generate_filename(self, title):
-        """生成文件名"""
+        """生成文件名 - 使用标题拼音/英文"""
         date = datetime.now().strftime("%Y%m%d")
-        # 移除特殊字符，转小写
-        slug = "".join(c for c in title if c.isalnum() or c == " ").lower()
-        slug = "-".join(slug.split())[:50]
+        
+        # 移除特殊字符，只保留字母数字和空格
+        clean_title = re.sub(r'[^\w\s-]', '', title)
+        # 转小写，空格变中划线
+        slug = clean_title.lower().strip().replace(' ', '-')
+        # 限制长度
+        slug = slug[:50]
+        
+        # 如果slug为空，用时间戳
+        if not slug or len(slug) < 3:
+            import time
+            slug = f"article-{int(time.time())}"
+        
         return f"{date}-{slug}"
     
     async def run(self):
@@ -101,7 +137,6 @@ class AutoScraper:
         
         article_count = 0
         
-        # 配置浏览器
         browser_config = BrowserConfig(
             headless=True,
             verbose=True,
@@ -126,7 +161,7 @@ class AutoScraper:
                         
                         data = await self.scrape_url(crawler, url, source_name)
                         
-                        if data and data.get("content") and len(data["content"]) > 100:
+                        if data and data.get("content") and len(data["content"]) > 200:
                             # 检查重复
                             if self.deduplicator.is_duplicate(data["title"], data["content"]):
                                 print(f"  ⏭️ 文章已存在，跳过")
@@ -136,6 +171,7 @@ class AutoScraper:
                             category = self.classifier.classify(data["title"], data["content"])
                             data["category"] = category
                             
+                            print(f"  📝 标题: {data['title'][:30]}...")
                             print(f"  📝 分类: {category}")
                             
                             # 生成文件名

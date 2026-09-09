@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ARTICLE_TITLE}} — iLoveTurtle</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <link rel="canonical" href="https://www.iloveturtle.com/article/{{FILE_NAME}}.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ARTICLE_TITLE}}",
+        "description": "{{META_DESCRIPTION}}",
+        "image": "https://www.iloveturtle.com/images/{{IMAGE_FILE}}",
+        "datePublished": "{{PUBLISH_DATE}}",
+        "dateModified": "{{PUBLISH_DATE}}",
+        "author": {
+            "@type": "Person",
+            "name": "iLoveTurtle Team"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "iLoveTurtle",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.iloveturtle.com/images/logo.png"
+            }
+        }
+    }
+    </script>
+    <!-- JSON-LD: FAQPage (if you have FAQ section) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {{#each faq_items}}
+            {
+                "@type": "Question",
+                "name": "{{this.question}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{this.answer}}"
+                }
+            }{{#unless @last}},{{/unless}}
+            {{/each}}
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-area">
+                <div class="logo-icon"><i class="fas fa-turtle"></i></div>
+                <div class="logo-text">
+                    <h1>iLoveTurtle</h1>
+                    <p>turtle · care guides</p>
+                </div>
+            </div>
+            <div class="nav-wrapper">
+                <nav class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../category/species.html">Species</a>
+                    <a href="../category/care.html">Care</a>
+                    <a href="../category/health.html">Health</a>
+                    <a href="../article-list.html">All Articles</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a> &gt; <a href="../category/{{CATEGORY_FOLDER}}.html">{{CATEGORY_NAME}}</a> &gt; <span>{{ARTICLE_TITLE}}</span>
+    </div>
+
+    <div class="article-container">
+        <div class="article-header">
+            <h1>{{ARTICLE_TITLE}}</h1>
+            <div class="article-meta">
+                <span><i class="far fa-calendar-alt"></i> {{PUBLISH_DATE}}</span>
+                <span><i class="far fa-user"></i> iLoveTurtle Team</span>
+            </div>
+        </div>
+        <img class="article-feature-image" src="../images/{{IMAGE_FILE}}" alt="{{ARTICLE_TITLE}}" loading="lazy">
+
+        <div class="article-content">
+            {{ARTICLE_BODY}}
+        </div>
+
+        <div class="article-footer">
+            <span>Category: <a href="../category/{{CATEGORY_FOLDER}}.html">{{CATEGORY_NAME}}</a></span>
+        </div>
+
+        <!-- FAQ Section (optional) -->
+        <div class="faq-section">
+            <h3>Frequently Asked Questions</h3>
+            {{#each faq_items}}
+            <div class="faq-item">
+                <h4>{{this.question}}</h4>
+                <p>{{this.answer}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h5>iLoveTurtle</h5><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Privacy</a></li></ul></div>
+                <div class="footer-col"><h5>Explore</h5><ul><li><a href="../category/species.html">Species</a></li><li><a href="../category/care.html">Care</a></li><li><a href="../category/health.html">Health</a></li></ul></div>
+                <div class="footer-col"><h5>Follow</h5><ul><li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li></ul></div>
+            </div>
+            <div class="copyright">© 2026 iLoveTurtle.com</div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

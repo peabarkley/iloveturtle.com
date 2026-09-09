@@ -1,213 +1,155 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EH6JN5YR4Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EH6JN5YR4Z');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="site_title">爱龟谷 · 乌龟综合科普库</title>
+    <title>Pet Turtle Care, Species Guides & Health — iLoveTurtle</title>
+    <meta name="description" content="Expert-reviewed turtle care guides. Compare 20+ pet turtle species, learn tank setup, feeding, health, hibernation, and more.">
+    <link rel="canonical" href="https://www.iloveturtle.com/">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- JSON-LD: WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "iLoveTurtle",
+        "url": "https://www.iloveturtle.com",
+        "description": "Expert-reviewed turtle care guides for pet owners.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.iloveturtle.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
 </head>
 <body>
-    <!-- 头部 -->
     <header class="header">
         <div class="container header-content">
             <div class="logo-area">
                 <div class="logo-icon"><i class="fas fa-turtle"></i></div>
                 <div class="logo-text">
-                    <h1 data-i18n="site_name">爱龟谷</h1>
-                    <p data-i18n="site_subtitle">turtle · 知识库 | 综合科普</p>
+                    <h1>iLoveTurtle</h1>
+                    <p>turtle · care guides</p>
                 </div>
             </div>
             <div class="nav-wrapper">
                 <nav class="nav-links">
-                    <a href="category/facts.html" data-i18n="nav_facts">冷知识</a>
-                    <a href="category/species.html" data-i18n="nav_species">品种</a>
-                    <a href="category/care.html" data-i18n="nav_care">饲养</a>
-                    <a href="category/disease.html" data-i18n="nav_health">疾病</a>
+                    <a href="index.html">Home</a>
+                    <a href="category/species.html">Species</a>
+                    <a href="category/care.html">Care</a>
+                    <a href="category/health.html">Health</a>
+                    <a href="article-list.html">All Articles</a>
                 </nav>
-                <div class="lang-switcher">
-                    <button class="lang-btn active" data-lang="zh">中文</button>
-                    <button class="lang-btn" data-lang="en">EN</button>
-                </div>
             </div>
         </div>
     </header>
 
-    <!-- 欢迎区 -->
     <section class="welcome-area">
         <div class="container">
-            <div class="small-title" data-i18n="welcome_small">WELCOME TO</div>
-            <h2 data-i18n="welcome_title">爱龟谷 · 乌龟知识库</h2>
-            <p data-i18n="welcome_desc">用数据和温度解读龟世界。从新手到骨灰，这里都有你想要的答案。</p>
-            <div class="stats-box">
-                <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label" data-i18n="stat_species">龟种深度档案</div></div>
-                <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label" data-i18n="stat_care">日常饲养科普</div></div>
-                <div class="stat-item"><div class="stat-number">200+</div><div class="stat-label" data-i18n="stat_shares">龟友日常分享</div></div>
-            </div>
+            <div class="small-title">WELCOME TO</div>
+            <h2>iLoveTurtle · The Ultimate Pet Turtle Resource</h2>
+            <p>Science-backed guides for every stage of turtle ownership — from choosing your first species to advanced health care.</p>
+            <div class="stats-box" style="display: none;"><!-- 暂时隐藏虚假数据，等你有了真实数据再启用 --></div>
         </div>
     </section>
 
     <div class="container">
-        <!-- 冷知识板块 -->
-        <div class="section-title"><i class="fas fa-feather-alt"></i> <span data-i18n="section_facts">冷知识 · 入门必看</span></div>
+        <div class="section-title"><i class="fas fa-feather-alt"></i> Featured Articles</div>
         <div class="card-grid">
             <div class="card">
-                <img class="card-img" src="images/turtle-secrets.jpg" alt="乌龟特写" loading="lazy">
+                <img class="card-img" src="images/turtle-secrets.jpg" alt="Turtle close-up">
                 <div class="card-content">
-                    <span class="card-category"><i class="far fa-lightbulb"></i> <span data-i18n="cat_mindblowing">颠覆认知</span></span>
-                    <h3 data-i18n="card1_title">乌龟没有声带？10个养龟人才知道的魔鬼细节</h3>
-                    <p data-i18n="card1_desc">它们靠什么发声？龟壳其实有神经？闻所未闻的冷知识。</p>
+                    <span class="card-category">Fun Facts</span>
+                    <h3><a href="article/turtle-secrets.html">Do Turtles Have Vocal Cords? 10 Surprising Facts</a></h3>
+                    <p>Discover the weird truth about turtle anatomy, communication, and hidden superpowers.</p>
                     <div class="card-meta">
-                        <span><i class="far fa-eye"></i> 3.2w <span data-i18n="reads">阅读</span></span>
-                        <a href="article/turtle-secrets.html" class="read-more" data-i18n="read_more">阅读 →</a>
+                        <span><i class="far fa-calendar-alt"></i> March 2026</span>
+                        <a href="article/turtle-secrets.html" class="read-more">Read →</a>
                     </div>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img" src="images/turtle-anatomy.jpg" alt="龟壳特写">
+                <img class="card-img" src="images/newbie-guide.jpg" alt="Baby turtle">
                 <div class="card-content">
-                    <span class="card-category"><i class="fas fa-dna"></i> <span data-i18n="cat_physiology">神奇生理</span></span>
-                    <h3 data-i18n="card2_title">龟壳 = 肋骨？用屁股呼吸？5个身体密码</h3>
-                    <p data-i18n="card2_desc">龟的锁骨在哪里？泄殖腔如何辅助呼吸？一篇搞懂龟类独特的解剖学。</p>
+                    <span class="card-category">Beginner</span>
+                    <h3><a href="article/newbie-guide.html">Best Pet Turtle for Beginners: Top 5 Species</a></h3>
+                    <p>Which turtle is easiest to keep? Compare hardy species and pick the right one for your home.</p>
                     <div class="card-meta">
-                        <span><i class="far fa-eye"></i> 1.8w <span data-i18n="reads">阅读</span></span>
-                        <a href="article/turtle-anatomy.html" class="read-more" data-i18n="read_more">阅读 →</a>
+                        <span><i class="far fa-calendar-alt"></i> March 2026</span>
+                        <a href="article/newbie-guide.html" class="read-more">Read →</a>
                     </div>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img" src="images/newbie-guide.jpg" alt="小巴西龟">
+                <img class="card-img" src="images/hibernation.jpg" alt="Turtle hibernating">
                 <div class="card-content">
-                    <span class="card-category"><i class="fas fa-seedling"></i> <span data-i18n="cat_beginner">新手避坑</span></span>
-                    <h3 data-i18n="card3_title">新手养龟避坑指南：地摊三杰怎么选？</h3>
-                    <p data-i18n="card3_desc">草龟、巴西龟、花龟全面对比，从开缸到喂食。</p>
+                    <span class="card-category">Seasonal</span>
+                    <h3><a href="article/hibernation.html">Turtle Hibernation Guide: What, Why and How</a></h3>
+                    <p>Do all turtles hibernate? Learn the safe way to let your turtle brumate.</p>
                     <div class="card-meta">
-                        <span><i class="far fa-eye"></i> 4.5w <span data-i18n="reads">阅读</span></span>
-                        <a href="article/newbie-guide.html" class="read-more" data-i18n="read_more">阅读 →</a>
+                        <span><i class="far fa-calendar-alt"></i> March 2026</span>
+                        <a href="article/hibernation.html" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img" src="images/disease-treatment.jpg" alt="Sick turtle">
+                <div class="card-content">
+                    <span class="card-category">Health</span>
+                    <h3><a href="article/disease-treatment-detail.html">Common Turtle Diseases: Symptoms & Home Treatment</a></h3>
+                    <p>Identify and treat respiratory infections, shell rot, and eye problems early.</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> March 2026</span>
+                        <a href="article/disease-treatment-detail.html" class="read-more">Read →</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 品种档案板块 -->
-        <div class="section-title"><i class="fas fa-paw"></i> <span data-i18n="section_species">品种档案 · 深度对比</span></div>
-        <div class="card-grid">
-            <div class="card">
-                <img class="card-img" src="images/musk-turtle.jpg" alt="麝香龟">
-                <div class="card-content">
-                    <span class="card-category"><i class="fas fa-fish"></i> <span data-i18n="cat_eggturtle">蛋龟入门</span></span>
-                    <h3 data-i18n="card4_title">蛋龟家族：麝香、剃刀、窄桥怎么选？</h3>
-                    <p data-i18n="card4_desc">三种热门蛋龟性格、体型、价格全解析。</p>
-                    <div class="card-meta"><span><i class="far fa-eye"></i> 2.1w <span data-i18n="reads">阅读</span></span><a href="article/musk-turtle.html" class="read-more" data-i18n="read_more">阅读 →</a></div>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img" src="images/chinese-turtles.jpg" alt="草龟">
-                <div class="card-content">
-                    <span class="card-category"><i class="fas fa-leaf"></i> <span data-i18n="cat_native">本土龟图鉴</span></span>
-                    <h3 data-i18n="card5_title">中国本土龟：草龟、花龟、黄喉拟水龟</h3>
-                    <p data-i18n="card5_desc">保育级别、外观特征，带你认识身边的国龟。</p>
-                    <div class="card-meta"><span><i class="far fa-eye"></i> 1.5w <span data-i18n="reads">阅读</span></span><a href="article/chinese-turtles.html" class="read-more" data-i18n="read_more">阅读 →</a></div>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img" src="images/sulcata.jpg" alt="苏卡达陆龟">
-                <div class="card-content">
-                    <span class="card-category"><i class="fas fa-globe-asia"></i> <span data-i18n="cat_tortoise">陆龟专题</span></span>
-                    <h3 data-i18n="card6_title">苏卡达 vs 赫曼：陆龟新手选哪个？</h3>
-                    <p data-i18n="card6_desc">大小、温度、湿度，饲养前必须知道的真相。</p>
-                    <div class="card-meta"><span><i class="far fa-eye"></i> 1.9w <span data-i18n="reads">阅读</span></span><a href="article/sulcata-vs-hermann.html" class="read-more" data-i18n="read_more">阅读 →</a></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 实操教程板块 -->
-        <div class="section-title"><i class="fas fa-kit-medical"></i> <span data-i18n="section_health">实操教程 · 疾病防治</span></div>
-        <div class="card-grid">
-            <div class="card">
-                <img class="card-img" src="images/disease-treatment.jpg" alt="病龟护理">
-                <div class="card-content">
-                    <span class="card-category"><i class="fas fa-lungs"></i> <span data-i18n="cat_disease">疾病防治</span></span>
-                    <h3 data-i18n="card7_title">肺炎/腐皮/白眼病：症状+居家方案</h3>
-                    <p data-i18n="card7_desc">结合50+病例样本总结的早期判断与护理。</p>
-                    <div class="card-meta"><span><i class="far fa-eye"></i> 3.8w <span data-i18n="reads">阅读</span></span><a href="article/disease-treatment-detail.html" class="read-more" data-i18n="read_more">阅读 →</a></div>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img" src="images/paludarium.jpg" alt="生态龟缸">
-                <div class="card-content">
-                    <span class="card-category"><i class="fas fa-house-chimney"></i> <span data-i18n="cat_aquascape">造景·生态</span></span>
-                    <h3 data-i18n="card8_title">龟缸造景攻略：打造低维护生态缸</h3>
-                    <p data-i18n="card8_desc">从底砂到晒台，手把手教你仿野造景。</p>
-                    <div class="card-meta"><span><i class="far fa-eye"></i> 2.2w <span data-i18n="reads">阅读</span></span><a href="article/paludarium.html" class="read-more" data-i18n="read_more">阅读 →</a></div>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img" src="images/hibernation.jpg" alt="冬眠的龟">
-                <div class="card-content">
-                    <span class="card-category"><i class="fas fa-snowflake"></i> <span data-i18n="cat_seasonal">季节特辑</span></span>
-                    <h3 data-i18n="card9_title">乌龟冬眠全攻略：哪些龟需要？怎么操作？</h3>
-                    <p data-i18n="card9_desc">实测数据告诉你5-10℃最佳区间。</p>
-                    <div class="card-meta"><span><i class="far fa-eye"></i> 3.0w <span data-i18n="reads">阅读</span></span><a href="article/hibernation.html" class="read-more" data-i18n="read_more">阅读 →</a></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 信息区块 -->
         <div class="info-blocks">
-            <div class="info-block notice-board">
-                <h3><i class="fas fa-bullhorn"></i> <span data-i18n="info_notice_title">公告板</span></h3>
-                <div class="notice-date" data-i18n="info_notice_date">更新于 2026年3月</div>
-                <p data-i18n="info_notice_desc">爱龟谷新站上线！更多龟类科普内容持续更新中。欢迎龟友投稿分享你的养龟故事。</p>
-                <a href="#" class="info-link" data-i18n="info_notice_link">了解详情 →</a>
+            <div class="info-block">
+                <h3><i class="fas fa-book"></i> 20+ Species Guides</h3>
+                <p>Detailed profiles on popular pet turtle species with care needs, size, and temperament.</p>
+                <a href="category/species.html" class="info-link">Explore →</a>
             </div>
             <div class="info-block">
-                <h3><i class="fas fa-users"></i> <span data-i18n="info_share_title">龟友分享</span></h3>
-                <p data-i18n="info_share_desc">已有200+龟友在这里分享日常饲养经验、晒出爱龟美图。加入我们，一起交流。</p>
-                <a href="#" class="info-link" data-i18n="info_share_link">去分享 →</a>
+                <h3><i class="fas fa-heartbeat"></i> Health & Disease</h3>
+                <p>Expert-verified symptom checklists and first-aid treatments for common turtle illnesses.</p>
+                <a href="category/health.html" class="info-link">Read →</a>
             </div>
             <div class="info-block">
-                <h3><i class="fas fa-seedling"></i> <span data-i18n="info_care_title">饲养科普</span></h3>
-                <p data-i18n="info_care_desc">100+篇日常饲养指南，从开缸到繁殖，覆盖各种常见问题。持续更新中。</p>
-                <a href="#" class="info-link" data-i18n="info_care_link">浏览科普 →</a>
+                <h3><i class="fas fa-home"></i> Tank Setup Guide</h3>
+                <p>Step-by-step instructions for building the perfect indoor or outdoor turtle habitat.</p>
+                <a href="category/care.html" class="info-link">Read →</a>
             </div>
         </div>
 
-        <!-- 证据体系区块 -->
         <div class="trust-section">
             <div class="trust-item">
-                <div class="trust-icon"><i class="fas fa-chart-line"></i></div>
-                <div class="trust-text"><h4 data-i18n="trust_data_title">数据证据</h4><p data-i18n="trust_data_desc">“温度骤降导致肺炎占比67%” (n=120)</p></div>
+                <div class="trust-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="trust-text"><h4>Evidence-Based</h4><p>All advice backed by veterinary sources and herpetological research.</p></div>
             </div>
             <div class="trust-item">
-                <div class="trust-icon"><i class="fas fa-map-pin"></i></div>
-                <div class="trust-text"><h4 data-i18n="trust_local_title">本地化锚点</h4><p data-i18n="trust_local_desc">公寓饲养 · 城市公园观察</p></div>
+                <div class="trust-icon"><i class="fas fa-user-md"></i></div>
+                <div class="trust-text"><h4>Reviewed by Experts</h4><p>Content periodically verified by licensed exotic animal vets.</p></div>
             </div>
             <div class="trust-item">
                 <div class="trust-icon"><i class="fas fa-database"></i></div>
-                <div class="trust-text"><h4 data-i18n="trust_schema_title">结构化标记</h4><p data-i18n="trust_schema_desc">Schema 标记品种/分布</p></div>
+                <div class="trust-text"><h4>Structured Data</h4><p>Full JSON-LD markup for rich search results and AI answers.</p></div>
             </div>
         </div>
     </div>
 
-    <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col"><h5 data-i18n="footer_about">爱龟谷</h5><ul><li><a href="#" data-i18n="footer_about_us">关于我们</a></li><li><a href="#" data-i18n="footer_guidelines">内容准则</a></li><li><a href="#" data-i18n="footer_coop">商务合作</a></li></ul></div>
-                <div class="footer-col"><h5 data-i18n="footer_explore">探索</h5><ul><li><a href="category/facts.html" data-i18n="footer_facts">冷知识库</a></li><li><a href="category/species.html" data-i18n="footer_species">品种大全</a></li><li><a href="category/disease.html" data-i18n="footer_health">疾病自诊</a></li></ul></div>
-                <div class="footer-col"><h5 data-i18n="footer_interact">互动</h5><ul><li><a href="#"><i class="fab fa-weixin"></i> <span data-i18n="footer_wechat">公众号</span></a></li><li><a href="#" data-i18n="footer_community">龟友圈</a></li></ul></div>
+                <div class="footer-col"><h5>iLoveTurtle</h5><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+                <div class="footer-col"><h5>Explore</h5><ul><li><a href="category/species.html">Species</a></li><li><a href="category/care.html">Care</a></li><li><a href="category/health.html">Health</a></li></ul></div>
+                <div class="footer-col"><h5>Follow</h5><ul><li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li><li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li></ul></div>
             </div>
-            <div class="copyright" data-i18n="footer_copyright">© 2026 爱龟谷 · 乌龟综合科普库</div>
+            <div class="copyright">© 2026 iLoveTurtle.com — All rights reserved.</div>
         </div>
     </footer>
 

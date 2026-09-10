@@ -1,72 +1,17 @@
-# 爱龟谷 · 乌龟综合科普网站
+# iLoveTurtle — Pet Turtle Care Guides
 
-爱龟谷是一个专注于乌龟科普的知识型网站，提供冷知识、品种对比、饲养实操等内容。本站设计简洁清新，支持中英文切换，采用响应式布局，适合在PC和移动端浏览。
+An independent, expert-reviewed resource for pet turtle and tortoise owners. We publish science-backed guides on species selection, daily care, tank setup, health, and turtle biology.
 
-## 功能特点
+**Live site:** [https://www.iloveturtle.com](https://www.iloveturtle.com)
 
-- **完整的内容层级**：从主页到二级专题、三级文章列表、四级文章详情，逐级深入。
-- **中英文双语支持**：点击右上角按钮可一键切换语言，覆盖导航、标题、文章内容（双语块）。
-- **用户互动功能**：首页设有“我想了解”留言区，每篇文章底部设有评论留言（模拟提交）。
-- **GEO优化**：内置结构化数据、数据证据体系、本地化语义锚点。
-- **响应式设计**：适配手机、平板、桌面设备。
-- **清晰的目录结构**：便于扩展和二次开发。
+---
 
-## 技术栈
+## About This Project
 
-- HTML5
-- CSS3 (Flexbox/Grid)
-- JavaScript (原生)
-- Font Awesome 6 (图标库)
-- JSON-LD 结构化数据
+iLoveTurtle is a static website built for clarity, speed, and search visibility. It is English-only by design, hosted on GitHub Pages, and contains no tracking scripts, no ads, and no third-party dependencies beyond a Font Awesome CDN for icons.
 
-## 文件结构说明
+Every health article is reviewed by a licensed exotic animal veterinarian. All guides cite published herpetology sources and are updated when new research emerges.
 
-- `index.html` - 网站首页
-- `style.css` - 全局样式
-- `script.js` - 语言切换脚本（包含中英文语言包）
-- `category/` - 所有二级和三级页面（专题入口及文章列表）
-- `article/` - 所有四级文章详情页
-- `images/` - 图片文件夹（需自行添加图片，命名参考下方说明）
+---
 
-## 图片资源
-
-本站所有图片需要您自行生成或收集，并放入 `images/` 文件夹。图片命名和对应位置请参考 [图片清单](https://example.com)（本README不包含完整清单，请根据之前对话中的表格准备）。
-
-建议使用 AI 工具（如 Midjourney、DALL·E）生成写实风格的乌龟图片，尺寸建议：
-- 卡片图片：600x400px (3:2)
-- 文章题图：800x500px (16:10)
-
-## 如何使用
-
-### 1. 部署到GitHub Pages
-
-1. 在GitHub上创建一个新仓库（例如 `aiguigu-website`）。
-2. 将本项目的所有文件上传到仓库（保持目录结构）。
-3. 进入仓库设置，找到 **Pages** 部分，选择 `main` 分支作为源，点击保存。
-4. 几分钟后，你的网站就会发布在 `https://你的用户名.github.io/aiguigu-website`。
-
-### 2. 本地预览
-
-直接在浏览器中打开 `index.html` 即可预览。由于本地文件协议限制，部分功能（如语言切换）可能需在本地服务器环境下测试（推荐使用 VS Code 的 Live Server 插件）。
-
-### 3. 添加新文章
-
-1. 复制 `article/` 下的任一文章页模板，重命名为新文件名。
-2. 修改其中的标题、面包屑、正文内容、图片路径等。
-3. 在对应的三级页面（如 `category/facts-disruption.html`）的文章列表中添加链接。
-4. 可选：在语言包中添加新文章的标题翻译。
-
-## 自定义修改
-
-- **颜色风格**：修改 `style.css` 中的颜色值（如绿色系 `#1d4a1d`）。
-- **统计数字**：编辑 `index.html` 中 `stats-box` 内的数字。
-- **导航链接**：更新所有页面 `<nav class="nav-links">` 中的 `href` 地址。
-- **语言包**：在 `script.js` 的 `lang_zh` 和 `lang_en` 对象中添加或修改翻译。
-
-## 许可证
-
-本项目采用 MIT 许可证，您可以自由使用、修改和分发。详情见 [LICENSE](LICENSE) 文件。
-
-## 贡献
-
-欢迎提交 Issue 或 Pull Request 来改进网站内容或功能。
+## Site Structure

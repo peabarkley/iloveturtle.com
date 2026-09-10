@@ -1,322 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- 首页 -->
-  <url>
-    <loc>https://www.iloveturtle.com/</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <!-- 分类页面 -->
-  <url>
-    <loc>https://www.iloveturtle.com/category/</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/zh/</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- ========== 文章页面 ========== -->
-  
-  <!-- 陆龟相关 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/20260320-_陆龟_-什么品种好养.en.html</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- 龟缸造景相关 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/20260320-_龟缸造景_-需要过滤吗.en.html</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/20260320-龟缸造景相关资讯.en.html</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/aquascape2.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/aquascape3.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- 蛋龟相关 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/20260320-蛋龟相关资讯.en.html</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/musk-turtle.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- 疾病防治 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/20260320-龟病治疗相关资讯.en.html</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/disease-treatment-detail.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/disease2.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/disease3.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- 饲养科普 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/20260320-乌龟饲养相关资讯.en.html</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/care-details.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/care2.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/care3.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- 冬眠专题 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/hibernation.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- 新手入门 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/newbie-guide.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- 水龟/半水龟 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/best-water-turtle.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/semiaquatic-list.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/semiaquatic2.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/semiaquatic3.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/water2.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/water3.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- 陆龟 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/sulcata-vs-hermann.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/tortoise2.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/tortoise3.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- 本土龟 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/chinese-turtles.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- 生理知识 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/turtle-anatomy.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/turtle-physiology2.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/turtle-physiology3.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/turtle-secrets.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- 专家推荐/季节专题 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/expert-recommend.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/expert2.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/expert3.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/seasonal2.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/seasonal3.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/paludarium.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- 以下URL名称较特殊，请确认是否需要保留 -->
-  <url>
-    <loc>https://www.iloveturtle.com/article/20260320-httpswwwzhihucomsearchqe4b98ce9be9ftype.en.html</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/20260320-httpswwwzhihucomsearchqe4b98ce9be9ftypecontentjava.en.html</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.iloveturtle.com/article/20260320-首页httpswwwbilibilicom.en.html</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://www.iloveturtle.com/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Main hub pages -->
+    <url>
+        <loc>https://www.iloveturtle.com/article-list.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/about.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/contact.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/privacy.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Category pages -->
+    <url>
+        <loc>https://www.iloveturtle.com/category/species.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/category/care.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/category/health.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/category/setup.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/category/facts.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Articles -->
+    <url>
+        <loc>https://www.iloveturtle.com/article/turtle-vocal-cords.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/best-pet-turtle-beginners.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/turtle-respiratory-infection.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/turtle-hibernation-guide.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!--
+    Add new article URLs here as you publish them.
+    Keep lastmod updated when you revise an article.
+    -->
+
 </urlset>

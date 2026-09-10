@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Block admin/internal areas (if you ever add any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all major search engines to crawl
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.iloveturtle.com/sitemap.xml

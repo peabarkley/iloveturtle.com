@@ -15,7 +15,9 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "All Turtle Care Articles",
-  "url": "https://www.iloveturtle.com/article-list.html"
+  "url": "https://www.iloveturtle.com/article-list.html",
+  "description": "Complete index of published turtle care guides on iLoveTurtle.",
+  "inLanguage": "en"
 }
 </script>
 
@@ -36,11 +38,14 @@
         color: #1f4a1f; font-size: 1.5rem;
         border-bottom: 2px solid #c2ddb5;
         padding-bottom: 10px; margin-bottom: 20px;
+        display: flex; align-items: center; gap: 10px;
     }
+    .list-section h2 i { color: #3d753d; }
     .list-section ul { list-style: none; padding: 0; }
     .list-section li {
         padding: 12px 0;
         border-bottom: 1px solid #e2eed6;
+        line-height: 1.6;
     }
     .list-section li:last-child { border-bottom: none; }
     .list-section a {
@@ -50,6 +55,18 @@
     .list-section a:hover { text-decoration: underline; }
     .list-section .meta {
         color: #7e9f7e; font-size: 0.85rem; margin-left: 8px;
+    }
+    .list-section .pending {
+        color: #5e7e5e; font-size: 1.02rem;
+        font-weight: 400;
+    }
+    .list-section .pending-note {
+        color: #8aa87a; font-size: 0.85rem; margin-left: 8px;
+        font-style: italic;
+    }
+    .in-progress-note {
+        color: #6b856b; font-size: 0.92rem;
+        margin-bottom: 16px; line-height: 1.6;
     }
 </style>
 </head>
@@ -92,7 +109,7 @@
 
 <div class="container">
 
-    <!-- PUBLISHED ARTICLES -->
+    <!-- ===== PUBLISHED ===== -->
     <div class="list-section">
         <h2><i class="fas fa-book-open"></i> Published Guides</h2>
         <ul>
@@ -115,34 +132,37 @@
         </ul>
     </div>
 
-    <!-- COMING SOON (PLAIN TEXT, NO LINKS) -->
+    <!-- ===== IN PROGRESS (PLAIN TEXT, NO LINKS) ===== -->
     <div class="list-section">
         <h2><i class="fas fa-hourglass-half"></i> In Progress</h2>
-        <p style="color:#6b856b;font-size:0.92rem;margin-bottom:16px;">The following guides are being written and will be published over the coming weeks.</p>
+        <p class="in-progress-note">
+            The following guides are being written and will be published over the coming weeks.
+            These are shown as plain text — no links — until the pages go live.
+        </p>
         <ul>
-            <li>What Is a Turtle Shell Made Of? Anatomy Explained <span class="meta">coming soon</span></li>
-            <li>Can Turtles Hear? How They Detect Sound Without Ears <span class="meta">coming soon</span></li>
-            <li>How Do Turtles Communicate With Each Other? <span class="meta">coming soon</span></li>
-            <li>Can Turtles Breathe Through Their Butts? <span class="meta">coming soon</span></li>
-            <li>Do Turtles Feel Pain in Their Shell? <span class="meta">coming soon</span></li>
-            <li>Sulcata vs Hermann's Tortoise: Which Is Right for You? <span class="meta">coming soon</span></li>
-            <li>Red-Eared Slider Care Guide <span class="meta">coming soon</span></li>
-            <li>Musk Turtle Care Guide: Size, Diet &amp; Tank Setup <span class="meta">coming soon</span></li>
-            <li>Small Turtles That Stay Small: 8 Pet Options <span class="meta">coming soon</span></li>
-            <li>Chinese Pond Turtle Care Guide <span class="meta">coming soon</span></li>
-            <li>What Do Pet Turtles Eat? Complete Diet Guide <span class="meta">coming soon</span></li>
-            <li>Do Turtles Need UVB Light? What Every Owner Should Know <span class="meta">coming soon</span></li>
-            <li>Correct Water Temperature for Pet Turtles <span class="meta">coming soon</span></li>
-            <li>How to Hold a Turtle Safely <span class="meta">coming soon</span></li>
-            <li>Shell Rot in Turtles: Causes, Treatment &amp; Prevention <span class="meta">coming soon</span></li>
-            <li>Turtle Eye Infection: Symptoms &amp; Home Treatment <span class="meta">coming soon</span></li>
-            <li>Metabolic Bone Disease in Turtles (Soft Shell) <span class="meta">coming soon</span></li>
-            <li>10 Signs Your Turtle Is Sick (And What to Do) <span class="meta">coming soon</span></li>
-            <li>Complete Turtle Tank Setup Guide for Beginners <span class="meta">coming soon</span></li>
-            <li>Best Filters for Turtle Tanks (2026 Guide) <span class="meta">coming soon</span></li>
-            <li>How to Choose a Basking Platform <span class="meta">coming soon</span></li>
-            <li>Turtle-Safe Aquascaping: Plants, Rocks &amp; Substrate <span class="meta">coming soon</span></li>
-            <li>Building an Outdoor Turtle Pond <span class="meta">coming soon</span></li>
+            <li><span class="pending">What Is a Turtle Shell Made Of? Anatomy Explained</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Can Turtles Hear? How They Detect Sound Without Ears</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">How Do Turtles Communicate With Each Other?</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Can Turtles Breathe Through Their Butts?</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Do Turtles Feel Pain in Their Shell?</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Sulcata vs Hermann's Tortoise: Which Is Right for You?</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Red-Eared Slider Care Guide</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Musk Turtle Care Guide: Size, Diet &amp; Tank Setup</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Small Turtles That Stay Small: 8 Pet Options</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Chinese Pond Turtle Care Guide</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">What Do Pet Turtles Eat? Complete Diet Guide</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Do Turtles Need UVB Light? What Every Owner Should Know</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Correct Water Temperature for Pet Turtles</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">How to Hold a Turtle Safely</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Shell Rot in Turtles: Causes, Treatment &amp; Prevention</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Turtle Eye Infection: Symptoms &amp; Home Treatment</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Metabolic Bone Disease in Turtles (Soft Shell)</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">10 Signs Your Turtle Is Sick (And What to Do)</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Complete Turtle Tank Setup Guide for Beginners</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Best Filters for Turtle Tanks (2026 Guide)</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">How to Choose a Basking Platform</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Turtle-Safe Aquascaping: Plants, Rocks &amp; Substrate</span> <span class="pending-note">coming soon</span></li>
+            <li><span class="pending">Building an Outdoor Turtle Pond</span> <span class="pending-note">coming soon</span></li>
         </ul>
     </div>
 
@@ -178,7 +198,7 @@
             </div>
         </div>
         <div class="copyright">
-            © 2026 iLoveTurtle.com · Content reviewed for accuracy · Not a substitute for veterinary advice.
+            © 2026 iLoveTurtle.com · Content based on published sources · Not a substitute for veterinary advice.
         </div>
     </div>
 </footer>

@@ -4,7 +4,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://www.iloveturtle.com/</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -12,25 +12,25 @@
     <!-- Hub pages -->
     <url>
         <loc>https://www.iloveturtle.com/article-list.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/about.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/contact.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/privacy.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
@@ -38,130 +38,205 @@
     <!-- Category pages -->
     <url>
         <loc>https://www.iloveturtle.com/category/species.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/category/care.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/category/health.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/category/setup.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/category/facts.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
-    <!-- Published articles -->
+    <!-- Published articles - Fun Facts -->
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-vocal-cords.html</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.iloveturtle.com/article/best-pet-turtle-beginners.html</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.iloveturtle.com/article/turtle-respiratory-infection.html</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.iloveturtle.com/article/turtle-hibernation-guide.html</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.iloveturtle.com/article/red-eared-slider-care.html</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.iloveturtle.com/article/what-do-turtles-eat.html</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.iloveturtle.com/article/do-turtles-need-uvb.html</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.iloveturtle.com/article/turtle-tank-setup-beginners.html</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.iloveturtle.com/article/shell-rot-treatment.html</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.iloveturtle.com/article/cloacal-respiration.html</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.iloveturtle.com/article/musk-turtle-care.html</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.iloveturtle.com/article/sulcata-vs-hermann.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-shell-anatomy.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/can-turtles-hear.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/turtle-communication.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/cloacal-respiration.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/turtle-shell-pain.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Published articles - Species -->
+    <url>
+        <loc>https://www.iloveturtle.com/article/best-pet-turtle-beginners.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/red-eared-slider-care.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/musk-turtle-care.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/sulcata-vs-hermann.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/small-turtles-stay-small.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/chinese-pond-turtle-care.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Published articles - Care -->
+    <url>
+        <loc>https://www.iloveturtle.com/article/what-do-turtles-eat.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/turtle-hibernation-guide.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/correct-water-temperature.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/how-to-hold-a-turtle.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Published articles - Health -->
+    <url>
+        <loc>https://www.iloveturtle.com/article/turtle-respiratory-infection.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/shell-rot-treatment.html</loc>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-eye-infection.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/metabolic-bone-disease.html</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/signs-sick-turtle.html</loc>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!--
-        Add new article URLs here as you publish them.
-        Keep lastmod updated when you revise an article.
-    -->
+    <!-- Published articles - Setup -->
+    <url>
+        <loc>https://www.iloveturtle.com/article/turtle-tank-setup-beginners.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/do-turtles-need-uvb.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/best-turtle-filter.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/turtle-basking-platform.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/turtle-safe-aquascaping.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/article/outdoor-turtle-pond.html</loc>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
 </urlset>

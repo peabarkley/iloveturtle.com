@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- ============================================ -->
+    <!-- ENGLISH PAGES (39 URLs)                       -->
+    <!-- ============================================ -->
 
     <!-- Homepage -->
     <url>
         <loc>https://www.iloveturtle.com/</loc>
-        <lastmod>2026-09-18</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iloveturtle.com/"/>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -12,241 +20,402 @@
     <!-- Core pages -->
     <url>
         <loc>https://www.iloveturtle.com/article-list.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/about.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/contact.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/privacy.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/disclaimer.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/terms.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
-    <!-- Category pages -->
+    <!-- English category pages -->
     <url>
         <loc>https://www.iloveturtle.com/category/species.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/category/care.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/category/health.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/category/setup.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/category/facts.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
-    <!-- Articles: Fun Facts -->
+    <!-- English articles: Fun Facts -->
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-vocal-cords.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-shell-anatomy.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/can-turtles-hear.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-communication.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/cloacal-respiration.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-shell-pain.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Articles: Species -->
+    <!-- English articles: Species -->
     <url>
         <loc>https://www.iloveturtle.com/article/best-pet-turtle-beginners.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/red-eared-slider-care.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/musk-turtle-care.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/sulcata-vs-hermann.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/small-turtles-stay-small.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/chinese-pond-turtle-care.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Articles: Care -->
+    <!-- English articles: Care -->
     <url>
         <loc>https://www.iloveturtle.com/article/what-do-turtles-eat.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-hibernation-guide.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/correct-water-temperature.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/how-to-hold-a-turtle.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Articles: Health -->
+    <!-- English articles: Health -->
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-respiratory-infection.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/shell-rot-treatment.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-eye-infection.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/metabolic-bone-disease.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/signs-sick-turtle.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Articles: Setup -->
+    <!-- English articles: Setup -->
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-tank-setup-beginners.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/do-turtles-need-uvb.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/best-turtle-filter.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-basking-platform.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/turtle-safe-aquascaping.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.iloveturtle.com/article/outdoor-turtle-pond.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ============================================ -->
+    <!-- CHINESE PAGES (21 URLs)                       -->
+    <!-- ============================================ -->
+
+    <!-- Chinese homepage -->
+    <url>
+        <loc>https://www.iloveturtle.com/zh/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.iloveturtle.com/"/>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Chinese core pages -->
+    <url>
+        <loc>https://www.iloveturtle.com/zh/article-list.html</loc>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/about.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/about.html"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/about.html"/>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/contact.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/contact.html"/>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/privacy.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/privacy.html"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/privacy.html"/>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/disclaimer.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/disclaimer.html"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/disclaimer.html"/>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/terms.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/terms.html"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/terms.html"/>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Chinese category pages -->
+    <url>
+        <loc>https://www.iloveturtle.com/zh/category/species.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/category/species.html"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/category/species.html"/>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/category/care.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/category/care.html"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/category/care.html"/>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/category/health.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/category/health.html"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/category/health.html"/>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/category/setup.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/category/setup.html"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/category/setup.html"/>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/category/facts.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/category/facts.html"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.iloveturtle.com/zh/category/facts.html"/>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Chinese articles -->
+    <url>
+        <loc>https://www.iloveturtle.com/zh/article/turtle-physiology3.html</loc>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/article/tortoise2.html</loc>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/article/care2.html</loc>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/article/water2.html</loc>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/article/chinese-turtles.html</loc>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/article/aquascape3.html</loc>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/article/paludarium.html</loc>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/article/semiaquatic3.html</loc>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.iloveturtle.com/zh/article/best-water-turtle.html</loc>
+        <lastmod>2026-09-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

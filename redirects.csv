@@ -1,0 +1,10 @@
+source,destination,statusCode
+/article/tortoise2.html,/zh/tortoise2,301
+/article/tortoise2,/zh/tortoise2,301
+/article/旧页3.html,/zh/新页3,301
+/article/旧页4.html,/zh/新页4,301
+/article/旧页5.html,/zh/新页5,301
+/article/旧页6.html,/zh/新页6,301
+/article/旧页7.html,/zh/新页7,301
+/article/旧页8.html,/zh/新页8,301
+/index.html,/zh/,301

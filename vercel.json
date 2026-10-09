@@ -1,0 +1,13 @@
+{
+  "redirects": [
+    { "source": "/article/tortoise2.html", "destination": "/zh/article/tortoise2.html", "permanent": true },
+    { "source": "/article/turtle-physiology3.html", "destination": "/zh/article/turtle-physiology3.html", "permanent": true },
+    { "source": "/article/care2.html", "destination": "/zh/article/care2.html", "permanent": true },
+    { "source": "/article/water2.html", "destination": "/zh/article/water2.html", "permanent": true },
+    { "source": "/article/chinese-turtles.html", "destination": "/zh/article/chinese-turtles.html", "permanent": true },
+    { "source": "/article/aquascape3.html", "destination": "/zh/article/aquascape3.html", "permanent": true },
+    { "source": "/article/paludarium.html", "destination": "/zh/article/paludarium.html", "permanent": true },
+    { "source": "/article/semiaquatic3.html", "destination": "/zh/article/semiaquatic3.html", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true }
+  ]
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EH6JN5YR4Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EH6JN5YR4Z');
+    </script>
+
+    <title>{{ARTICLE_TITLE}} - 愛龜谷</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <link rel="canonical" href="https://www.iloveturtle.com/zh/article/{{SLUG}}.html">
+
+    <!-- hreflang 三行：en / zh-Hant / x-default (x-default 指向英文页) -->
+    <link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/article/{{SLUG}}.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://www.iloveturtle.com/zh/article/{{SLUG}}.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.iloveturtle.com/article/{{SLUG}}.html">
+
+    <meta property="og:title" content="{{ARTICLE_TITLE}} - 愛龜谷">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:image" content="https://www.iloveturtle.com/images/{{IMAGE_FILE}}">
+    <meta property="og:url" content="https://www.iloveturtle.com/zh/article/{{SLUG}}.html">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ARTICLE_TITLE}}",
+        "description": "{{META_DESCRIPTION}}",
+        "image": "https://www.iloveturtle.com/images/{{IMAGE_FILE}}",
+        "datePublished": "{{PUBLISH_DATE}}",
+        "dateModified": "{{PUBLISH_DATE}}",
+        "author": { "@type": "Organization", "name": "愛龜谷" },
+        "publisher": { "@type": "Organization", "name": "愛龜谷", "logo": { "@type": "ImageObject", "url": "https://www.iloveturtle.com/images/logo.png" } },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.iloveturtle.com/zh/article/{{SLUG}}.html" },
+        "inLanguage": "zh-Hant"
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage (if you have FAQ section) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {{#each faq_items}}
+            {
+                "@type": "Question",
+                "name": "{{this.question}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{this.answer}}"
+                }
+            }{{#unless @last}},{{/unless}}
+            {{/each}}
+        ]
+    }
+    </script>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container header-content">
+        <div class="logo-area">
+            <a href="/zh/" class="logo-icon" style="text-decoration:none;"><i class="fas fa-turtle"></i></a>
+            <div class="logo-text">
+                <a href="/zh/" style="text-decoration:none;color:inherit;">
+                    <div class="site-name">愛龜谷</div>
+                    <p>烏龜科普 · 飼養指南</p>
+                </a>
+            </div>
+        </div>
+        <div class="nav-wrapper">
+            <nav class="nav-links">
+                <a href="/zh/">首頁</a>
+                <a href="/zh/category/species.html">品種</a>
+                <a href="/zh/category/care.html">飼養</a>
+                <a href="/zh/category/health.html">疾病</a>
+                <a href="/zh/category/setup.html">環境</a>
+                <a href="/zh/category/facts.html">冷知識</a>
+            </nav>
+            <div class="lang-switch"><a href="/article/{{SLUG}}.html">English</a></div>
+        </div>
+    </div>
+</header>
+
+<div class="breadcrumb container">
+    <a href="/zh/">首頁</a> &nbsp;›&nbsp;
+    <a href="/zh/category/{{CATEGORY_FOLDER}}.html">{{CATEGORY_NAME}}</a> &nbsp;›&nbsp;
+    <span>{{ARTICLE_TITLE}}</span>
+</div>
+
+<article class="article-container">
+
+    <header class="article-header">
+        <h1>{{ARTICLE_TITLE}}</h1>
+        <div class="article-meta">
+            <span><i class="far fa-calendar-alt"></i> {{PUBLISH_DATE}}</span>
+            <span><i class="far fa-clock"></i> 閱讀約 {{READ_TIME}} 分鐘</span>
+        </div>
+    </header>
+
+    <img class="article-feature-image" src="/images/{{IMAGE_FILE}}" alt="{{ARTICLE_TITLE}}" loading="eager">
+
+    <div class="article-content">
+        {{ARTICLE_BODY}}
+    </div>
+
+    <footer class="article-footer">
+        <span>分類：<a href="/zh/category/{{CATEGORY_FOLDER}}.html">{{CATEGORY_NAME}}</a></span>
+        <span>最後更新：{{PUBLISH_DATE}}</span>
+    </footer>
+
+</article>
+
+<!-- FAQ Section (optional) -->
+<div class="container">
+    <div class="faq-section" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2eed6;">
+        <h3 style="color: #1f4a1f; font-size: 1.2rem; margin-bottom: 16px;">常見問題</h3>
+        {{#each faq_items}}
+        <div class="faq-item" style="margin-bottom: 20px;">
+            <h4 style="color: #2f562f; margin-bottom: 8px;">{{this.question}}</h4>
+            <p style="color: #4a6a4a; line-height: 1.6;">{{this.answer}}</p>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<!-- 相關文章模块（防止新文章成为孤岛） -->
+<div class="container">
+    <div class="related-posts-section" style="margin-top: 40px; padding-top: 20px; border-bottom: 1px solid #e2eed6; padding-bottom: 40px;">
+        <h3 style="color: #1f4a1f; font-size: 1.2rem; margin-bottom: 16px;"><i class="fas fa-link"></i> 相關文章</h3>
+        <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px;">
+            <li><a href="/zh/article/what-do-turtles-eat.html" style="color: #2c7a2c; text-decoration: none;">烏龜吃什麼？完整飲食指南</a></li>
+            <li><a href="/zh/article/turtle-tank-setup-beginners.html" style="color: #2c7a2c; text-decoration: none;">龜缸搭建完整指南</a></li>
+            <li><a href="/zh/article/signs-sick-turtle.html" style="color: #2c7a2c; text-decoration: none;">烏龜生病的 10 個信號</a></li>
+        </ul>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>愛龜谷</h5>
+                <ul>
+                    <li><a href="/zh/about.html">關於我們</a></li>
+                    <li><a href="/zh/contact.html">聯絡我們</a></li>
+                    <li><a href="/zh/privacy.html">隱私政策</a></li>
+                    <li><a href="/zh/disclaimer.html">免責聲明</a></li>
+                    <li><a href="/zh/terms.html">服務條款</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>瀏覽</h5>
+                <ul>
+                    <li><a href="/zh/category/species.html">品種</a></li>
+                    <li><a href="/zh/category/care.html">飼養</a></li>
+                    <li><a href="/zh/category/health.html">疾病</a></li>
+                    <li><a href="/zh/category/setup.html">環境</a></li>
+                    <li><a href="/zh/category/facts.html">冷知識</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>其他</h5>
+                <ul>
+                    <li><a href="/zh/article-list.html">全部文章</a></li>
+                    <li><a href="/sitemap.xml">Sitemap</a></li>
+                    <li><a href="/">English</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 愛龜谷 · 志願者社群項目 · 內容不能替代獸醫診斷
+        </div>
+    </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

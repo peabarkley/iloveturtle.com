@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EH6JN5YR4Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-EH6JN5YR4Z');
+    </script>
+
     <title>{{ARTICLE_TITLE}} — iLoveTurtle</title>
     <meta name="description" content="{{META_DESCRIPTION}}">
     <link rel="canonical" href="https://www.iloveturtle.com/article/{{SLUG}}.html">
@@ -115,7 +126,7 @@
             {{/each}}
         </div>
         
-        <!-- 新增：相关文章模块（防止新文章成为孤岛） -->
+        <!-- 相关文章模块（防止新文章成为孤岛） -->
         <div class="related-posts-section" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2eed6;">
             <h3 style="color: #1f4a1f; font-size: 1.2rem; margin-bottom: 16px;"><i class="fas fa-link"></i> Related Articles</h3>
             <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr; gap: 12px;">
@@ -135,7 +146,7 @@
                         <li><a href="../about.html">About</a></li>
                         <li><a href="../contact.html">Contact</a></li>
                         <li><a href="../privacy.html">Privacy</a></li>
-                        <!-- 新增：补全 AdSense 审核需要的页面 -->
+                        <!-- 补全 AdSense 审核需要的页面 -->
                         <li><a href="../disclaimer.html">Disclaimer</a></li>
                         <li><a href="../terms.html">Terms</a></li>
                     </ul>

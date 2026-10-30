@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ARTICLE_TITLE}} — iLoveTurtle</title>
     <meta name="description" content="{{META_DESCRIPTION}}">
-    <link rel="canonical" href="https://www.iloveturtle.com/article/{{FILE_NAME}}.html">
+    <link rel="canonical" href="https://www.iloveturtle.com/article/{{SLUG}}.html">
 
     <!-- hreflang 三行：en / zh-Hant / x-default -->
     <link rel="alternate" hreflang="en" href="https://www.iloveturtle.com/article/{{SLUG}}.html" />
@@ -114,14 +114,47 @@
             </div>
             {{/each}}
         </div>
+        
+        <!-- 新增：相关文章模块（防止新文章成为孤岛） -->
+        <div class="related-posts-section" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2eed6;">
+            <h3 style="color: #1f4a1f; font-size: 1.2rem; margin-bottom: 16px;"><i class="fas fa-link"></i> Related Articles</h3>
+            <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr; gap: 12px;">
+                <li><a href="/article/best-pet-turtle-beginners.html" style="color: #2c7a2c; text-decoration: none;">Best Pet Turtle for Beginners</a></li>
+                <li><a href="/article/turtle-tank-setup-beginners.html" style="color: #2c7a2c; text-decoration: none;">Complete Turtle Tank Setup Guide</a></li>
+                <li><a href="/article/what-do-turtles-eat.html" style="color: #2c7a2c; text-decoration: none;">What Do Pet Turtles Eat?</a></li>
+            </ul>
+        </div>
     </div>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col"><h5>iLoveTurtle</h5><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Privacy</a></li></ul></div>
-                <div class="footer-col"><h5>Explore</h5><ul><li><a href="../category/species.html">Species</a></li><li><a href="../category/care.html">Care</a></li><li><a href="../category/health.html">Health</a></li></ul></div>
-                <div class="footer-col"><h5>Follow</h5><ul><li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li></ul></div>
+                <div class="footer-col">
+                    <h5>iLoveTurtle</h5>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../privacy.html">Privacy</a></li>
+                        <!-- 新增：补全 AdSense 审核需要的页面 -->
+                        <li><a href="../disclaimer.html">Disclaimer</a></li>
+                        <li><a href="../terms.html">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Explore</h5>
+                    <ul>
+                        <li><a href="../category/species.html">Species</a></li>
+                        <li><a href="../category/care.html">Care</a></li>
+                        <li><a href="../category/health.html">Health</a></li>
+                        <li><a href="../article-list.html">All Articles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Follow</h5>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="copyright">© 2026 iLoveTurtle.com</div>
         </div>

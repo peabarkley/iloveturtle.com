@@ -11,6 +11,6 @@
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/care-essentials.html", "destination": "/category/care.html", "permanent": true },
     { "source": "/category/care-essentials.html", "destination": "/category/care.html", "permanent": true },
-    { "source": "/species-semiaquatic.html", "destination": "/category/species.html", "permanent": true }
+    { "source": "/category/species-semiaquatic.html", "destination": "/category/species.html", "permanent": true }
   ]
 }

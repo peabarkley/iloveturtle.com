@@ -8,6 +8,7 @@
     { "source": "/article/aquascape3.html", "destination": "/zh/article/aquascape3.html", "permanent": true },
     { "source": "/article/paludarium.html", "destination": "/zh/article/paludarium.html", "permanent": true },
     { "source": "/article/semiaquatic3.html", "destination": "/zh/article/semiaquatic3.html", "permanent": true },
-    { "source": "/index.html", "destination": "/", "permanent": true }
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/care-essentials.html", "destination": "/category/care.html", "permanent": true }
   ]
 }

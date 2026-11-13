@@ -80,6 +80,55 @@ def main():
             if target is None:
                 errors += fail(f"{rel} hreflang {lang} -> {path} does not exist")
 
+    footer_re = re.compile(r'<footer class="footer">.*?</footer>', re.S)
+    for html in ROOT.rglob("*.html"):
+        rel = html.relative_to(ROOT).as_posix()
+        if rel in SKIP:
+            continue
+        text = html.read_text(encoding="utf-8")
+        switches = switch_re.findall(text)
+        if not switches:
+            continue
+        header_hrefs = [href for href, _inner in a_re.findall(switches[0])]
+        if len(header_hrefs) != 1:
+            errors += fail(f"{rel} header language switch should have one link")
+            continue
+        footer = footer_re.search(text)
+        if not footer:
+            continue
+        footer_hrefs = []
+        for href, inner in a_re.findall(footer.group(0)):
+            label = re.sub(r"<[^>]+>", "", inner)
+            label = re.sub(r"\s+", " ", label).strip()
+            if label in LABELS:
+                footer_hrefs.append(href)
+        # Standard footers include the sitemap and a language link. Legacy
+        # category footers have neither; leave those on the header switch only.
+        requires_footer_link = "sitemap.xml" in footer.group(0)
+        if requires_footer_link and len(footer_hrefs) != 1:
+            errors += fail(f"{rel} footer should have one language link, found {footer_hrefs}")
+            continue
+        if len(footer_hrefs) > 1:
+            errors += fail(f"{rel} footer has multiple language links: {footer_hrefs}")
+            continue
+        if footer_hrefs and footer_hrefs[0] != header_hrefs[0]:
+            errors += fail(
+                f"{rel} footer language link {footer_hrefs[0]} "
+                f"does not match header {header_hrefs[0]}"
+            )
+
+    expected_switches = {
+        "about.html": "/zh/about.html",
+        "contact.html": "/zh/contact.html",
+        "privacy.html": "/zh/privacy.html",
+        "terms.html": "/zh/terms.html",
+        "disclaimer.html": "/zh/disclaimer.html",
+    }
+    for rel, href in expected_switches.items():
+        text = (ROOT / rel).read_text(encoding="utf-8")
+        if f'<div class="lang-switch"><a href="{href}">中文</a></div>' not in text:
+            errors += fail(f"{rel} is missing the header language switch to {href}")
+
     species = (ROOT / "category" / "species.html").read_text(encoding="utf-8")
     if "/article/red-footed-tortoise-care.html" not in species:
         errors += fail("species listing omits red-footed-tortoise-care")

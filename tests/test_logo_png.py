@@ -109,19 +109,31 @@ def main():
     else:
         print("brand color rgb(29, 74, 29) is present")
 
+    # Metadata crawlers need the absolute URL. Header <img> may use the
+    # site-root path /images/logo.png so the wordmark loads on any host.
+    allowed_suffixes = (LOGO_URL, "/images/logo.png", "images/logo.png")
     refs = []
     for html in ROOT.rglob("*.html"):
         text = html.read_text(encoding="utf-8")
         if "logo.png" not in text:
             continue
         count = text.count(LOGO_URL)
-        other = text.count("logo.png") - count
-        refs.append((html.relative_to(ROOT).as_posix(), count, other))
-        if other:
-            errors += fail(f"{html} has a logo.png reference that is not {LOGO_URL}")
+        refs.append((html.relative_to(ROOT).as_posix(), count))
+        start = 0
+        while True:
+            i = text.find("logo.png", start)
+            if i < 0:
+                break
+            prefix = text[max(0, i - 80):i]
+            if not any(prefix.endswith(suf[: -len("logo.png")]) for suf in allowed_suffixes):
+                errors += fail(f"{html} has an unexpected logo.png reference near {prefix[-40]!r}")
+            start = i + len("logo.png")
     if not refs:
         errors += fail("no HTML references logo.png")
-    print(f"html files referencing {LOGO_URL}: {len(refs)}")
+    meta_refs = sum(1 for _, count in refs if count)
+    print(f"html files referencing logo.png: {len(refs)}; with absolute metadata URL: {meta_refs}")
+    if meta_refs < 1:
+        errors += fail(f"no HTML metadata points at {LOGO_URL}")
     if errors:
         return 1
     print("PASS")

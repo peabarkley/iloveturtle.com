@@ -74,6 +74,15 @@ a:hover {
 .logo-icon {
     font-size: 2rem;
     color: #3d753d;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+}
+
+.logo-icon img {
+    height: 32px;
+    width: auto;
+    display: block;
 }
 
 .logo-text .site-name {
@@ -871,6 +880,14 @@ a:hover {
 @media (max-width: 480px) {
     .container {
         padding: 0 16px;
+    }
+
+    .logo-area {
+        flex-wrap: wrap;
+    }
+
+    .logo-icon img {
+        height: 26px;
     }
 
     .welcome-area {

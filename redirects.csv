@@ -1,10 +1,3 @@
 source,destination,statusCode
-/article/tortoise2.html,/zh/article/tortoise2.html,301
-/article/turtle-physiology3.html,/zh/article/turtle-physiology3.html,301
-/article/care2.html,/zh/article/care2.html,301
-/article/water2.html,/zh/article/water2.html,301
-/article/chinese-turtles.html,/zh/article/chinese-turtles.html,301
-/article/aquascape3.html,/zh/article/aquascape3.html,301
-/article/paludarium.html,/zh/article/paludarium.html,301
-/article/semiaquatic3.html,/zh/article/semiaquatic3.html,301
+/article/tortoise2.html,/article/red-footed-tortoise-care.html,301
 /index.html,/zh/,301
